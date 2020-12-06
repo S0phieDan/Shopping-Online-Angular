@@ -1,0 +1,35 @@
+<div class="order-complete">
+    <div class="order-data">
+        <div class="header">
+            <h1>Order Complete</h1>
+            <i class="fa fa-check-circle fa-2x"></i>
+        </div>
+        <div class="data">
+            <div class="section">
+                <h3>Order number:</h3>
+                {{ order_id }}
+            </div>
+            <div class="section">
+                <h3>Total Price:</h3>
+                {{ totalPrice.toFixed(2) }}$
+            </div>
+            <div class="section">
+                <h3>Shipping Date:</h3>
+                {{ shippingDate }}
+            </div>
+            <div class="section">
+                <h3>Order Created On:</h3>
+                {{ orderCreationDate }}
+            </div>
+            <div>
+                <button class="download" (click)="download()">Download Receipt</button>
+            </div>
+        </div>
+        <h2>Thanks for yor purchase!</h2>
+        <div class="btn">
+            <button type="button" class="btn-order-complete" (click)="finishOrder()">
+                <span>Finish</span>
+            </button>
+        </div>
+    </div>
+</div>

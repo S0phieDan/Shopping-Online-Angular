@@ -1,0 +1,45 @@
+
+<div class="first-step step"  *ngIf="!isNextStep">
+    <h3>STEP 1</h3>
+    <div [ngClass]="{'form-group': true, 'danger': !isIdValid}">
+        <input type="number" class="field" placeholder="ID" autocomplete="off" (keyup)="setId($event.target.value)">
+    </div>
+    <div [ngClass]="{'form-group': true, 'danger': !isEmailValid}">
+        <input type="email" class="field" placeholder="Email" autocomplete="off" (keyup)="setEmail($event.target.value)">
+    </div>
+    <div [ngClass]="{'form-group': true, 'danger': !isPasswordValid}">
+        <input type="password" class="field" placeholder="Password" autocomplete="off" (keyup)="setPassword($event.target.value)">
+    </div>
+    <div [ngClass]="{'form-group': true, 'danger': !isConfirmPasswordValid}">
+        <input type="password" class="field" placeholder="Confirm Password" autocomplete="off" (keyup)="setConfirmPassword($event.target.value)">
+    </div>
+    <button type="button" class="btn-register" (click)="continueToNextStep()">
+        <span>Continue...</span>
+    </button>
+</div>
+<div class="second-step step"  *ngIf="isNextStep">
+    <h3>STEP 2</h3>
+    <div [ngClass]="{'select large': true, 'danger': !isCityValid}" tabindex="0" (click)="openCitiesList()">
+        <div class="list" tabindex="-1">
+            <div class="filter">
+                <input type="text" placeholder="Search City..." [value]="city" (keyup)="setSearchCityName($event.target.value)">
+            </div>
+            <ul *ngIf="isOpenList && israelCities">
+                <li class="cityLi" *ngFor="let cityName of searchCitiesArray" (click)="setSelectedCity($event.target.innerText)">{{cityName}}</li>
+            </ul>
+        </div>
+    </div>
+    <div [ngClass]="{'form-group': true, 'danger': !isStreetValid}">
+        <input type="text" class="field" placeholder="Street" autocomplete="off" (keyup)="setStreet($event.target.value)">
+    </div>
+    <div [ngClass]="{'form-group': true, 'danger': !isFirstNameValid}">
+        <input type="text" class="field" placeholder="First Name" autocomplete="off" (keyup)="setFirstName($event.target.value)">
+    </div>
+    <div [ngClass]="{'form-group': true, 'danger': !isLastNameValid}">
+        <input type="text" class="field" placeholder="Last Name" autocomplete="off" (keyup)="setLastName($event.target.value)">
+    </div>
+    <button type="button" class="btn-register" (click)="createAccount()">
+        <span>Create Account</span>
+    </button>
+</div>
+<app-popup *ngIf="errorMessage" [errorMessage]="errorMessage" [isSuccess]="false" (popupEvent)="receivePopupEvent($event)"></app-popup>

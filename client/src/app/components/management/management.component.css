@@ -1,0 +1,32 @@
+.store-management{
+    display: flex;
+    height: 93%;
+    width: 100%;
+    overflow: auto;
+}
+
+.expended{
+    flex: 0.25;
+    background-color: #82b74b;
+}
+
+
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+.main-content{
+    display: flex;
+    width: 100%;
+}
+
+.products-management{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    background-color: #f0f3f9;
+    z-index: 1;
+    overflow: auto;
+    position: relative;
+}

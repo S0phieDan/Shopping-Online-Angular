@@ -1,0 +1,102 @@
+.store-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1;
+    height: 100%;
+    position:relative;
+    transition: opacity 0.8s;
+    text-align: center;
+}
+
+.img-store-data{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    z-index: -1;
+    background-image: url('../../../assets/images/pexels-lisa-fotios-1395958.jpg');
+    background-size: cover;
+    opacity: 1;
+    transition: all 0.8s;
+}
+
+.store-data:hover .img-store-data{
+    opacity: 0.3;
+}
+
+.store-data:hover .data{
+    color:  #0d47a1;
+    text-shadow: none;
+}
+
+.store-data:hover .data .additional-data{
+    display: flex;
+}
+
+.store-data:hover .data .additional-data h2{
+    color: #363636;
+}
+
+.data{
+    text-shadow:5px 5px 10px black;
+}
+
+.data h1{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+h1{
+    margin: 0;
+}
+
+h2{
+    margin: 3px;
+    margin-bottom: 10px;
+}
+
+.additional-data{
+    margin-top: 15px;
+    display: none;
+    justify-items: center;
+    justify-content: center;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-align: center;
+    width: 15rem;
+}
+
+.additional-data h2{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.order-img{
+    background-color: white;
+    background-image: url(../../../assets/images/hiclipart.com.png);
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 10px 10px 18px rgba(0,0,0,0.35);
+}
+
+.products-img{
+    background-color: white;
+    background-image: url(../../../assets/images/hiclipart1.com.png);
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 10px 10px 18px rgba(0,0,0,0.35);
+}
+

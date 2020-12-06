@@ -1,0 +1,22 @@
+<div class="cart">
+    <div class="cart-header">
+        <div class="back" (click)="backToShop()">
+            <span>Back to Shop</span>
+            <i class="fa fa-arrow-circle-left fa-lg"></i>
+        </div>
+        <div class="title">
+            <h2 class="name">CART</h2>
+            <i class="fa fa-shopping-cart fa-2x"></i>
+        </div>
+        <app-search (searchInOrderEvent)="receiveSearchInOrderEvent($event)"></app-search>
+    </div>
+    <div class="cart-body">
+        <app-cart-item-order *ngFor="let cartItem of cartItems" [cartItem]="cartItem" [isExpanded]=true [query]="searchInput"></app-cart-item-order>
+    </div>
+    <div class="cart-footer">
+        <div class="total-sum">
+            <h4>NO CHANGES PERMITTED HERE!</h4>
+            Totlal: {{ totalSum.toFixed(2) }} $
+        </div>
+    </div>
+</div>

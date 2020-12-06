@@ -1,0 +1,22 @@
+<div class="store-data">
+    <div class="data">
+        <h1>You Should Know!</h1>
+        <div class="additional-data">
+            <div class="section">
+                <h2 *ngIf="productsInStore">
+                    Available products in our store: {{ productsInStore }}
+                </h2>
+                <div class="products-img"></div>
+            </div>
+            <div class="section">
+                <h2 *ngIf="orders">
+                    Number of orders in our store: {{ orders }}
+                </h2>
+                <div class="order-img"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="img-store-data">
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div [ngClass]="{'cart-item': isExpanded, 'm-cart-item': !isExpanded}">
+    <div [ngClass]="{'img': isExpanded, 'only-img': !isExpanded}">
+        <img class="img-item" src="http://localhost:5000/api/images/{{ cartItem.product_id.image }}">
+    </div>
+    <div [ngClass]="{'item-details': isExpanded, 'hide': !isExpanded}">
+        <div class="item-name">
+            {{ cartItem.product_id.name }}
+        </div>
+        <div class="item-quantity">
+            Qty: {{ cartItem.quantity }}
+        </div>
+    </div>
+    <div [ngClass]="{'total-price-item': isExpanded, 'hide': !isExpanded}">
+        <div class="text">
+            {{ cartItem.price }} $
+        </div>
+        <button type="button" class="delete" (click)="deleteItemFromCart(cartItem)">✕</button>
+    </div>
+</div>

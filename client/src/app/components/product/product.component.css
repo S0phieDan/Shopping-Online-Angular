@@ -1,0 +1,143 @@
+.product{
+    width: 15rem;
+    height: 15rem;
+    background-color: white;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1.8px solid #dde3ee;
+    transition: transform 0.3s;
+    text-align: center;
+    font-weight: 600;
+    animation: opac 0.8s;
+}
+
+.product-title{
+    color: #42a5f5;
+}
+
+.product-price{
+    color: #5f5f5f;
+}
+
+@keyframes opac{from{opacity:0} to{opacity:1}}
+
+
+.product:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0px 6px  #42a5f5;
+    cursor: pointer;
+}
+
+.img-product{
+    width: 10rem;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(47, 65, 110, 0.4);
+    animation: opac 0.8s;
+    visibility: visible;
+  }
+  
+.popup {
+    background: white;
+    border-radius: 5px;
+    width: 25rem;
+    height: 10rem;
+    position: relative;
+    transition: opac 0.8;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+
+.popup-head h2 {
+    margin-top: 0;
+    color: #0d47a1;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-family: mainFont;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.popup .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    color: #5e5e5e;
+}
+
+.choose-quantity{
+    margin: 10px 0px;
+    font-size: large;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+.btn-add{
+    font-size: large;
+    background-color: #42a5f5;
+    outline:none;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 0;
+    font-family: mainFont;
+}
+
+.btn-add:hover{
+    cursor: pointer;
+    background-color: #3f97df;
+}
+
+.popup-head{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    justify-items: baseline;
+}
+
+.content{
+    font-size: medium;
+    font-weight: 600;
+    
+}
+
+.close-popup{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: large;
+    color: #5e5e5e;
+}
+
+.close-popup:hover{
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}

@@ -1,0 +1,79 @@
+.register{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    z-index: 3;
+    height: 100%;
+    position:relative;
+    transition: all 0.8s;
+}
+
+.img-register{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    z-index: -1;
+    background-image: url('../../../assets/images/pexels-lisa-fotios-4552444.jpg');
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 0.8s;
+}
+
+.register:hover .img-register{
+    opacity: 0.3;
+}
+
+.register:hover .register-title{
+    color:  #0d47a1;
+    text-shadow: none;
+}
+
+form{
+    padding: 20px;
+    text-align: center;
+}
+
+.register-title{
+    text-shadow:5px 5px 10px black;
+}
+
+.new-user{
+    margin-top: 5px;
+    font-family: mainFont;
+    font-size: medium;
+    font-weight: 600;
+    color: whitesmoke;
+    text-shadow:5px 5px 10px black;
+}
+
+.create-user{
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.create-user:hover{
+    cursor: pointer;
+    color: #42a5f5;
+}
+
+.register:hover .new-user{
+    color: #363636;
+    text-shadow: none;
+}
+
+.register-title h1{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+app-popup{
+    width: 90%;
+    align-self: center;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}

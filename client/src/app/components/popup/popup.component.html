@@ -1,0 +1,37 @@
+<div *ngIf="isSuccess" class="popup">
+    <div class="popup-color-success">
+    </div>
+    <div class="popup-message">
+        <div class="popup-header">
+            <div class="popup-status">
+                <i class="fa fa-check-circle fa-lg"></i>
+                Success
+            </div>
+            <div class="close-ppopup" (click)="closePopup()">
+                <i class="fa fa-times fa-lg"></i>
+            </div>
+        </div>
+        <div class="popup-content">
+            {{successMessage}}
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isSuccess" class="popup">
+    <div class="popup-color-danger">
+    </div>
+    <div class="popup-message">
+        <div class="popup-header">
+            <div class="popup-status">
+                <i class="fa fa-exclamation-circle fa-lg"></i>
+                Error
+            </div>
+            <div class="close-ppopup" (click)="closePopup()">
+                <i class="fa fa-times fa-lg"></i>
+            </div>
+        </div>
+        <div class="popup-content">
+            {{errorMessage}}
+        </div>
+    </div>
+</div>

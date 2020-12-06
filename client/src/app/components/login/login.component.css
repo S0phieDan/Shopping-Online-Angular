@@ -1,0 +1,247 @@
+.login{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    z-index: 3;
+    height: 100%;
+    position:relative;
+    transition: all 0.8s;
+}
+
+.h-login{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.img-login{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    z-index: -1;
+    background-image: url('../../../assets/images/pexels-marco-antonio-victorino-2363347.jpg');
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 0.8s;
+}
+
+.login:hover .img-login{
+    opacity: 0.3;
+}
+
+.login:hover .login-title{
+    color:  #0d47a1;
+    text-shadow: none;
+}
+
+form{
+    padding: 20px;
+    text-align: center;
+}
+
+.login-title{
+    text-shadow:5px 5px 10px black;
+}
+
+.form-group{
+    width: 18rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    color: #333;
+    background-color: white;
+    font-size: large;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+    border-radius: 4px;
+}
+
+.danger{
+    box-shadow: 0 0px 6px #ff4d4d;
+}
+
+::placeholder {
+    font-weight: 600;
+    font-size: large;
+    font-family: mainFont;
+    color: #333;
+    opacity: 0.7;
+}
+
+.email{
+    width: 100%;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+    color: #333;
+    font-size: medium;
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.password{
+    width: 100%;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+    color: #333;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.email:focus {
+    border-bottom: 2.5px solid #42a5f5;
+}
+
+.password:focus{
+    border-bottom: 2.5px solid #42a5f5;
+}
+
+.btn-login{
+    display: inline-block;
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    font-size: large;
+    font-family: mainFont;
+    color: white;
+    font-weight: 600;
+    background-color: #0d47a1;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+    border-radius: 4px;
+    transition: all 0.5s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-login span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn-login span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+    font-size: large;
+    font-family: mainFont;
+}
+
+.btn-login:hover{
+    cursor: pointer;
+}
+
+.btn-login:hover span {
+    padding-right: 20px;
+}
+
+.btn-login:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.new-user{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: mainFont;
+    font-size: medium;
+    font-weight: 600;
+    color: whitesmoke;
+    text-shadow:5px 5px 10px black;
+}
+
+.create-user{
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.create-user:hover{
+    cursor: pointer;
+    color: #42a5f5;
+}
+
+.login:hover .new-user{
+    color: #363636;
+    text-shadow: none;
+}
+
+.btn-start-shopping{
+    border: none;
+    outline: none;
+    font-family: mainFont;
+    color: white;
+    padding:10px;
+    background-color: #0d47a1; 
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+}
+
+.btn-start-shopping h1{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.login:hover .btn-start-shopping{
+    box-shadow:none;
+}
+
+.btn-start-shopping h1{
+    margin: 0;
+}
+
+.btn-start-shopping:hover{
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.35) !important;
+}
+
+.fa-shopping-cart{
+    margin-left: 3px;
+}
+
+.cart-message{
+    font-family: mainFont;
+    font-weight: 600;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-shadow:5px 5px 10px black;
+    color:  #ffe600;
+}
+
+.cart-message h2{
+    margin-bottom: 5px;
+    font-family: mainFont;
+    font-weight: 600;
+    text-shadow:5px 5px 10px black;
+    color: #ffe600;
+}
+
+.login:hover .cart-message h2{
+    color:  #0d47a1;
+    text-shadow: none;
+}
+
+.login:hover .cart-message{
+    color:  #363636;
+    text-shadow: none;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}
+
+
+
+
+

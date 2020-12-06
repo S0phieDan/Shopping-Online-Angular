@@ -1,0 +1,11 @@
+<div class="store-management">
+    <div class="main-content">
+        <div class="expended">
+            <app-update-product-form [isHiddenBody]="isHiddenBody" (cancelEvent)="receiveCancelUpdateEvent($event)"></app-update-product-form>
+            <app-new-product-form [isHiddenBody]="!isHiddenBody" (click)="changeHiddenBody()"></app-new-product-form>
+        </div>
+        <div class="products-management">
+            <app-product-list [isAdminLogged]="isAdminLogged" (isEditProductOpened)="receiveIsEditProductOpened($event)"></app-product-list>
+        </div>
+    </div>
+</div>

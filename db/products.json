@@ -1,0 +1,371 @@
+[{
+  "_id": {
+    "$oid": "5f7484b6c6b14f549578390b"
+  },
+  "name": "Apple",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 3.5,
+  "image": "apple.png"
+},{
+  "_id": {
+    "$oid": "5f748a1fc6b14f549578390c"
+  },
+  "name": "Mango",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 5,
+  "image": "mango.png"
+},{
+  "_id": {
+    "$oid": "5f748a2fc6b14f549578390d"
+  },
+  "name": "Green Apple",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 1.5,
+  "image": "green-apple.png"
+},{
+  "_id": {
+    "$oid": "5f748a44c6b14f549578390e"
+  },
+  "name": "Watermelon",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 4,
+  "image": "watermelon.png"
+},{
+  "_id": {
+    "$oid": "5f748a55c6b14f549578390f"
+  },
+  "name": "Banana",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 2.5,
+  "image": "bananas.png"
+},{
+  "_id": {
+    "$oid": "5f7b2177dc083b7d492bd5f0"
+  },
+  "name": "Orange",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 3.5,
+  "image": "orange.png"
+},{
+  "_id": {
+    "$oid": "5f7b21c9dc083b7d492bd5f1"
+  },
+  "name": "Grape",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 2,
+  "image": "grape.png"
+},{
+  "_id": {
+    "$oid": "5f7b21efdc083b7d492bd5f2"
+  },
+  "name": "Strawberries",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 4,
+  "image": "strawberries.png"
+},{
+  "_id": {
+    "$oid": "5f7b2436473a262f44038a70"
+  },
+  "name": "Pinaple",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 8.5,
+  "image": "pinaple.png"
+},{
+  "_id": {
+    "$oid": "5f7b24be473a262f44038a71"
+  },
+  "name": "Greek Yogurt",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 5.5,
+  "image": "greek.png"
+},{
+  "_id": {
+    "$oid": "5f7b24f3473a262f44038a72"
+  },
+  "name": "Milk",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 6,
+  "image": "milk.png"
+},{
+  "_id": {
+    "$oid": "5f7b257a473a262f44038a73"
+  },
+  "name": "Swiss Cheese",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 10,
+  "image": "swiss_cheese.png"
+},{
+  "_id": {
+    "$oid": "5f7b25d9473a262f44038a74"
+  },
+  "name": "Frozen Yogurt",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 7.99,
+  "image": "frozen_yogurt.png"
+},{
+  "_id": {
+    "$oid": "5f7b37eb473a262f44038a75"
+  },
+  "name": "Milk Flavor",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 2.5,
+  "image": "milk_flavor.png"
+},{
+  "_id": {
+    "$oid": "5f7b38fc473a262f44038a76"
+  },
+  "name": "Milka Bar",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 6.99,
+  "image": "milka.png"
+},{
+  "_id": {
+    "$oid": "5f7b3a37473a262f44038a77"
+  },
+  "name": "Activia 4 Yogurts",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 8.5,
+  "image": "activia.png"
+},{
+  "_id": {
+    "$oid": "5f7b3adb473a262f44038a78"
+  },
+  "name": "Activia Drink Yogurt",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 8.5,
+  "image": "activia_drink.png"
+},{
+  "_id": {
+    "$oid": "5f7b3b01473a262f44038a79"
+  },
+  "name": "Gouda Cheese",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 8.5,
+  "image": "gouda.png"
+},{
+  "_id": {
+    "$oid": "5f7b3c58473a262f44038a7a"
+  },
+  "name": "Eggs Large Set",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 10.5,
+  "image": "eggs_big.png"
+},{
+  "_id": {
+    "$oid": "5f7b55fb473a262f44038a7b"
+  },
+  "name": "Steaks",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 25.99,
+  "image": "steak.png"
+},{
+  "_id": {
+    "$oid": "5f7b5641473a262f44038a7c"
+  },
+  "name": "Turkey",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 20.5,
+  "image": "turkey.png"
+},{
+  "_id": {
+    "$oid": "5f7b56a1473a262f44038a7d"
+  },
+  "name": "Barbecue Chicken",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 10,
+  "image": "chicken.png"
+},{
+  "_id": {
+    "$oid": "5f7b571d473a262f44038a7e"
+  },
+  "name": "Raw meat",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 15,
+  "image": "raw_meat.png"
+},{
+  "_id": {
+    "$oid": "5f7b5779473a262f44038a7f"
+  },
+  "name": "Salmon",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 18.99,
+  "image": "salmon.png"
+},{
+  "_id": {
+    "$oid": "5f7b57bc473a262f44038a80"
+  },
+  "name": "Hamburger",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 8.5,
+  "image": "hamburger.png"
+},{
+  "_id": {
+    "$oid": "5f7b57fa473a262f44038a81"
+  },
+  "name": "Schnitzel",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 6.99,
+  "image": "schnitzel.png"
+},{
+  "_id": {
+    "$oid": "5f7b581a473a262f44038a82"
+  },
+  "name": "Sushi",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 5.5,
+  "image": "sushi.png"
+},{
+  "_id": {
+    "$oid": "5f7b59de473a262f44038a83"
+  },
+  "name": "Ground Beef",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 8.5,
+  "image": "ground_beef.png"
+},{
+  "_id": {
+    "$oid": "5f7b5ff6473a262f44038a84"
+  },
+  "name": "Heineken Beer",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 5.5,
+  "image": "heineken.png"
+},{
+  "_id": {
+    "$oid": "5f7b6022473a262f44038a85"
+  },
+  "name": "Red Wine",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 5.5,
+  "image": "red_wine.png"
+},{
+  "_id": {
+    "$oid": "5f7b603a473a262f44038a86"
+  },
+  "name": "Coca-Cola",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 2.5,
+  "image": "cola.png"
+},{
+  "_id": {
+    "$oid": "5f7b606b473a262f44038a87"
+  },
+  "name": "White Wine",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 13.5,
+  "image": "wine.png"
+},{
+  "_id": {
+    "$oid": "5f7b608a473a262f44038a88"
+  },
+  "name": "Sprite",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 2.5,
+  "image": "sprite.png"
+},{
+  "_id": {
+    "$oid": "5f7b60b2473a262f44038a89"
+  },
+  "name": "Corona",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 12.99,
+  "image": "corona.png"
+},{
+  "_id": {
+    "$oid": "5f7b60e9473a262f44038a8a"
+  },
+  "name": "Fanta",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 2.5,
+  "image": "fanta.png"
+},{
+  "_id": {
+    "$oid": "5f7b6176473a262f44038a8b"
+  },
+  "name": "Pepsi",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 3,
+  "image": "pepsi.png"
+},{
+  "_id": {
+    "$oid": "5f7b63b1473a262f44038a8c"
+  },
+  "name": "Nestea",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 4,
+  "image": "nestea.png"
+}]

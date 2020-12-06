@@ -1,0 +1,30 @@
+<div class="product" (click)="functionTrigger(product)">
+    <img class="img-product" src="http://localhost:5000/api/images/{{ product.image }}">
+    <div class="product-data">
+        <div class="product-title">
+            {{ product.name }}
+        </div>
+        <div class="product-price">
+            {{ product.price }} $
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isPopup && !isAdminLogged">
+    <div class="overlay">
+        <div class="popup">
+            <div class="popup-head">
+                <div>
+                    <h2>Enter quantity</h2>
+                </div>
+                <button class="close-popup" (click)="closePopup()">🗙</button>
+            </div>
+            <div class="content">
+                Choose amount of {{product.name}}:
+                <input type="number" class="choose-quantity" (keyup)="setQuantity($event.target.value)" maxlength="100000" minlength="1" [value]="quantity">
+                <button type="button" class="btn-add" (click)="chooseProduct(product)">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+

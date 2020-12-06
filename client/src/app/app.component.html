@@ -1,0 +1,16 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <div class="logo">
+    <i class="fa fa-leaf fa-lg"></i>
+    FreshStock
+  </div>
+  <div class="connected-user">
+    Hello, {{name}}
+    <div class="user-email" *ngIf="email">
+      {{email}}
+    </div>
+  </div>
+  <i  *ngIf="email" class="fa fa-sign-out fa-2x" aria-hidden="true" (click)="signOut()"></i>
+</div>
+<router-outlet></router-outlet>
+  

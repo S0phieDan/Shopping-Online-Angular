@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "category_name": "Milk & Eggs"
+},{
+  "_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "category_name": "Vegetables & Fruits"
+},{
+  "_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "category_name": "Meat & Fish"
+},{
+  "_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "category_name": "Wine & Drinks"
+}]

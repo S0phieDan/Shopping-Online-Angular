@@ -1,0 +1,10 @@
+<div class="store">
+    <div class="main-content">
+        <div [ngClass]="{cart:true, 'minimized-cart': minimizedSize, 'expended-cart': !minimizedSize}">
+            <app-cart (changeCartSizeEvent)="receiveChangeCartSizeEvent($event)"></app-cart>
+        </div>
+        <div class="products">
+            <app-product-list></app-product-list>
+        </div>
+    </div>
+</div>

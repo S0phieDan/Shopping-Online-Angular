@@ -1,0 +1,39 @@
+.li-category{
+    font-size: large;
+    font-weight: 600;
+    color: #5e5e5e;
+    font-family: mainFont;
+    border: none;
+    background-color: transparent;
+}
+
+.li-category:hover{
+    cursor: pointer;
+    color: #42a5f5;
+    border-bottom: 2px solid #42a5f5;
+}
+
+.li-category-active{
+    color: #42a5f5;
+    border-bottom: 2px solid #42a5f5;
+}
+
+.categories{
+    display: flex;
+    justify-content: center;
+}
+
+.ul-categories{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    padding-inline-start:0px;
+    background-color: transparent;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}

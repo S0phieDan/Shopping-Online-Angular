@@ -1,0 +1,183 @@
+h3{
+    color: white;
+    text-shadow:5px 5px 10px black;
+}
+
+.form-group{
+    width: 18rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    color: #333;
+    background-color: white;
+    font-size: large;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+    border-radius: 4px;
+}
+
+.field{
+    width: 100%;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+    color: #333;
+    font-size: medium;
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+::placeholder {
+    color: #333;
+    font-weight: 600;
+    font-size: large;
+    font-family: mainFont;
+    opacity: 0.7; /* Firefox */
+}
+
+.field:focus{
+    border-bottom: 2.5px solid #42a5f5;
+}
+
+.btn-register{
+    display: inline-block;
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    font-size: large;
+    font-family: mainFont;
+    color: white;
+    font-weight: 600;
+    background-color: #0d47a1;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+    border-radius: 4px;
+    transition: all 0.5s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-register span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn-register span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+    font-size: large;
+    font-family: mainFont;
+}
+
+.btn-register:hover{
+    cursor: pointer;
+}
+
+.btn-register:hover span {
+    padding-right: 20px;
+}
+
+.btn-register:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.select{
+    outline: none;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+    z-index: 5;
+}
+
+.list{
+    width: 100%;
+    display: block;
+    height: 45px;
+    outline: none;
+    z-index: 6;
+}
+
+.filter{
+    width: 100%;
+}
+
+.filter input{
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: medium;
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+ul{
+    display: block;
+    height: 180px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    background-color: whitesmoke;
+}
+
+li{
+    padding: 10px;
+    background-color: whitesmoke;
+    color: #333;
+    font-family: mainFont;
+    border-bottom: 1.8px solid #dde3ee;
+}
+
+li:hover
+{
+    background-color: rgba(66, 165, 245, 0.2);
+    cursor: pointer;
+}
+.first-step h3{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.second-step h3{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.cityLi{
+    font-family: mainFont;
+    font-weight: 600;
+}
+
+.danger{
+    box-shadow: 0 0px 6px #ff4d4d;
+}
+
+.step{
+    margin-bottom: 10px;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}
+
+
+
+

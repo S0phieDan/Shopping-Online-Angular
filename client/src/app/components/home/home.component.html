@@ -1,0 +1,6 @@
+<div class="home">
+    <app-login *ngIf="isLoginPage" (isRegisterEvent)="receiveIsRegisterEvent($event)"></app-login>
+    <app-register  *ngIf="isRegisterPage" (isLoginEvent)="receiveIsLoginEvent($event)"></app-register>
+    <app-store-ad></app-store-ad>
+    <app-store-data></app-store-data>
+</div>

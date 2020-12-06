@@ -1,0 +1,23 @@
+.home{
+    display: flex;
+    height: 93%;
+    width: 100%;
+    background-color:whitesmoke;
+}
+
+app-login{
+    flex: 1;
+}
+
+app-register{
+    flex: 1;
+}
+
+app-store-ad{
+    flex: 1;
+}
+
+app-store-data{
+    flex: 1;
+}
+
