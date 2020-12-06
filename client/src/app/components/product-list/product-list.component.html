@@ -4,11 +4,17 @@
 </div>
 <div class="list">
     <app-product 
-        *ngFor="let product of products" 
+        *ngFor="let product of productsPerPage" 
         [product]="product"
         (chooseProductEvent)="receiveChooseProductEvent($event)"
         [isAdminLogged]="isAdminLogged"
         (updateProductEvent)="receiveUpdateProductEvent($event)"
     >
     </app-product>
+    <mat-paginator 
+        [length]="products.length"
+        [pageSize]="pageSize"
+        (page)="pageEvent = handlePage($event)">
+    </mat-paginator>
 </div>
+

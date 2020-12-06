@@ -4,6 +4,7 @@ import { ProductModel } from '../../model/product.model';
 import { ProductListServiceService } from '../../services/product-list-service.service';
 import { SharedServiceService } from '../../services/shared-service.service';
 import { SocketioService } from '../../services/socketio.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-product-list',
@@ -12,12 +13,17 @@ import { SocketioService } from '../../services/socketio.service';
 })
 export class ProductListComponent implements OnInit {
   products:ProductModel[] = [];
+  productsPerPage:ProductModel[] = [];
   chosenCategory:string = "Milk & Eggs";
   selectedCategory:number = 0;
   @Input() isAdminLogged:boolean;
   newProduct: ProductModel;
   updatedProduct: ProductModel;
   @Output() isEditProductOpened: EventEmitter<boolean> = new EventEmitter();
+  pageEvent: PageEvent;
+  pageSize:Number = 10;
+
+
   
   constructor(
     private productListServiceService:ProductListServiceService, private sharedService:SharedServiceService, private socketService: SocketioService) { }
@@ -74,6 +80,11 @@ export class ProductListComponent implements OnInit {
     this.productListServiceService.getProductList(this.chosenCategory).subscribe((data: ProductModel[]) => {
       if(data)
         this.products = data;
+        this.productsPerPage = [];
+
+        for(let i=0; i<this.pageSize; i++){
+          this.productsPerPage.push(this.products[i]);
+        }
     });
   }
 
@@ -90,5 +101,18 @@ export class ProductListComponent implements OnInit {
         this.sharedService.addCartItemToCart(data[0]);
     })
 
+  }
+
+  handlePage(event:PageEvent){
+    const {pageIndex, pageSize} = event;
+    let startIndex = pageIndex * pageSize;
+    let endIndex = startIndex + pageSize;
+    this.productsPerPage = [];
+
+    for(let i=startIndex; i<endIndex && i<this.products.length; i++){
+      this.productsPerPage.push(this.products[i]);
+    }
+    
+    return event;
   }
 }
