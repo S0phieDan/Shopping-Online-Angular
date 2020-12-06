@@ -34,13 +34,13 @@
             </button>
             <div *ngIf="!welcomeMessage" class="cart-message">
                 <h2>Your Last Order Details</h2>
-                <div class="cart-data">
+                <div class="cart-data" *ngIf="orderCreated">
                     Order Created: {{ orderCreated }}
                 </div>
-                <div class="cart-data">
+                <div class="cart-data" *ngIf="orderPrice">
                     Total Price: {{ orderPrice.toFixed(2) }}$
                 </div>
-                <div class="cart-data">
+                <div class="cart-data" *ngIf="shippingDate">
                     Shipping Date: {{ shippingDate }}
                 </div>
             </div>
@@ -58,12 +58,12 @@
                     <i class="fa fa-shopping-cart fa-lg"></i>
                 </h1>
             </button>
-            <div class="cart-message">
+            <div class="cart-message" *ngIf="cartCreationDate">
                 <h2>You have an open cart!</h2>
                 <div class="cart-data">
                     Cart Created: {{ cartCreationDate }}
                 </div>
-                <div class="cart-data">
+                <div class="cart-data" *ngIf="cartTotalPrice">
                     Total Price: {{ cartTotalPrice.toFixed(2) }}$
                 </div>
             </div>

@@ -51,6 +51,8 @@ export class AppComponent implements OnInit {
   signOut(): void{
     
     this.loginService.destroySession().subscribe((data: ResponseModel) => {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
       this.router.navigate(['/']);
     });
   }
