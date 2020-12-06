@@ -1,0 +1,99 @@
+[{
+  "_id": 1234567890,
+  "email": "sophie@walla.com",
+  "password": "$2b$10$sN.vybjSYUH/OKkyz0dWWeoL.uAeReiIgMH4EX4ZE/XlIEF7/D2GO",
+  "city": "LA",
+  "street": "Baker",
+  "first_name": "Sophie",
+  "last_name": "Dan",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 888989557,
+  "email": "bar@gmail.com",
+  "password": "$2b$10$PilMDa/9o2Q8slbOpSCKf.W7FbKhPL5UYn/K5u2Mgn/1d2TKBuN72",
+  "city": "Tel Aviv Jaffa",
+  "street": "Haharuv",
+  "first_name": "Bar",
+  "last_name": "Ohayon",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 568214697,
+  "email": "tester@gmail.com",
+  "password": "$2b$10$bwVosS3G/WhFB8ktjM833OVCN5cZxb9czTM8VjzruAoWT5JEhCw/G",
+  "city": "Haifa",
+  "street": "Herzel",
+  "first_name": "Tester",
+  "last_name": "Tester",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 328519662,
+  "email": "admin@walla.com",
+  "password": "$2b$10$pIzaALFoStQia7IpS7Io1.P.f5elGGTIzKUzDbtDpypCjzg5q8zNS",
+  "first_name": "Admin",
+  "last_name": "Admin",
+  "isAdmin": true,
+  "__v": 0
+},{
+  "_id": 445778953,
+  "email": "anna@gmail.com",
+  "password": "$2b$10$tcTtutnLmtC2moTazPRuwONwR1Yx85NgIUWiXsWLOG9K2wyAOm/E6",
+  "city": "Jerusalem",
+  "street": "Herzel",
+  "first_name": "Anna",
+  "last_name": "Cohen",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 356782941,
+  "email": "arthur@yahoo.com",
+  "password": "$2b$10$BmF/5thh6biyWOgu7V5No.9gcfkvPbKV/9lju2gF3mQp/yiMz37tO",
+  "city": "Nahariya",
+  "street": "Vradim",
+  "first_name": "Arthur",
+  "last_name": "Brown",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 765889404,
+  "email": "ariana@gmail.com",
+  "password": "$2b$10$1aCtsoRDDXxyTbO5D.uCYOh0/6HNA6o1RhceX1fbyOPsX.e5l.tTi",
+  "city": "Eilat",
+  "street": "Derech",
+  "first_name": "Ariana",
+  "last_name": "Grande",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 555234909,
+  "email": "rachel@gmail.com",
+  "password": "$2b$10$lnMKuojVNJ7WYn62g4bR2eNXCp8jqL0r8SKXKksgtnalYgNVnOh8q",
+  "city": "Hertzeliya",
+  "street": "Shalom",
+  "first_name": "Rachel",
+  "last_name": "Green",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 777081993,
+  "email": "ross@friends.com",
+  "password": "$2b$10$rvEATajTv4Z/jiF6INI2MOvkpF5X8EWNR/DY8U7vD0QgXKzuRKCT6",
+  "city": "Sde Boker",
+  "street": "Boker",
+  "first_name": "Ross",
+  "last_name": "Geller",
+  "isAdmin": false,
+  "__v": 0
+},{
+  "_id": 456346890,
+  "email": "israel@walla.com",
+  "password": "$2b$10$TP1wNchpxgWXNkCrPe4ip.8rRAc8bjyAP/dczdAQi8w/TyStatK22",
+  "city": "Sde Boker",
+  "street": "Shalom",
+  "first_name": "Israel",
+  "last_name": "Shalom",
+  "isAdmin": false,
+  "__v": 0
+}]

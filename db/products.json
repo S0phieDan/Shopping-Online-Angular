@@ -106,7 +106,7 @@
   "category_id": {
     "$oid": "5f747d7eed9b49463cfad265"
   },
-  "price": 6,
+  "price": 8,
   "image": "milk.png"
 },{
   "_id": {
@@ -126,8 +126,8 @@
   "category_id": {
     "$oid": "5f747d7eed9b49463cfad265"
   },
-  "price": 7.99,
-  "image": "frozen_yogurt.png"
+  "price": 5.9,
+  "image": "9ef74216-9410-42c1-9e86-cd1f4e195639.png"
 },{
   "_id": {
     "$oid": "5f7b37eb473a262f44038a75"
@@ -146,7 +146,7 @@
   "category_id": {
     "$oid": "5f747d7eed9b49463cfad265"
   },
-  "price": 6.99,
+  "price": 8.5,
   "image": "milka.png"
 },{
   "_id": {
@@ -368,4 +368,434 @@
   },
   "price": 4,
   "image": "nestea.png"
+},{
+  "_id": {
+    "$oid": "5fc371722f96472a28afc9ac"
+  },
+  "name": "Pepper",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 4.56,
+  "image": "f902aaec-0583-4255-97b8-d74393c0d963.png"
+},{
+  "_id": {
+    "$oid": "5fc3718a2f96472a28afc9ad"
+  },
+  "name": "Carrot",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 5.87,
+  "image": "d083a32b-82c6-46fe-a728-fcc5c0211ed2.png"
+},{
+  "_id": {
+    "$oid": "5fc371a22f96472a28afc9ae"
+  },
+  "name": "Cabbage",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 8.95,
+  "image": "f54eedc7-81cd-4e6e-9916-8630c137d7c0.png"
+},{
+  "_id": {
+    "$oid": "5fc371bc2f96472a28afc9af"
+  },
+  "name": "Pumpkin",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 10.23,
+  "image": "c4610fd3-5696-42ed-beb8-99aa5e5fd3c2.png"
+},{
+  "_id": {
+    "$oid": "5fc3722f2f96472a28afc9b0"
+  },
+  "name": "Dill Herb Salad",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 2.8,
+  "image": "1f15d3eb-fa95-460f-9117-23c040bf7157.png"
+},{
+  "_id": {
+    "$oid": "5fc372502f96472a28afc9b1"
+  },
+  "name": "Lettuce",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 4,
+  "image": "36359092-2ab0-4589-9ce3-ca755ed05865.png"
+},{
+  "_id": {
+    "$oid": "5fc372792f96472a28afc9b2"
+  },
+  "name": "Tomatos",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 3.5,
+  "image": "1cf3ec2b-388a-4f60-8ee2-2c414e3215c5.png"
+},{
+  "_id": {
+    "$oid": "5fc372cc2f96472a28afc9b3"
+  },
+  "name": "Cauliflower",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 2.56,
+  "image": "176b02d5-a526-4c88-8bd7-7527c8c0ee4b.png"
+},{
+  "_id": {
+    "$oid": "5fc372e62f96472a28afc9b4"
+  },
+  "name": "Cucumber ",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 1.58,
+  "image": "d5f21498-70cb-4922-881b-dd5e386033f0.png"
+},{
+  "_id": {
+    "$oid": "5fc373322f96472a28afc9b5"
+  },
+  "name": "Zucchini",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 2.42,
+  "image": "1b6c7057-19b1-4e09-8caf-ea5d3bc8bdcf.png"
+},{
+  "_id": {
+    "$oid": "5fc373602f96472a28afc9b6"
+  },
+  "name": "Sweet potato",
+  "category_id": {
+    "$oid": "5f747d93ed9b49463cfad266"
+  },
+  "price": 5.5,
+  "image": "2aa57a1a-1d8d-45ba-82bd-bd09768c3e7c.png"
+},{
+  "_id": {
+    "$oid": "5fc374602f96472a28afc9b7"
+  },
+  "name": "Fresh Yogurt",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 1.5,
+  "image": "ecf3c21f-a6a1-437e-b04b-5ce880062939.png"
+},{
+  "_id": {
+    "$oid": "5fc374752f96472a28afc9b8"
+  },
+  "name": "Cheddar cheese",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 8.5,
+  "image": "0f50921e-4180-4069-88b0-fd6d6b05ef03.png"
+},{
+  "_id": {
+    "$oid": "5fc374a42f96472a28afc9b9"
+  },
+  "name": "Coconut Yogurt",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 5.5,
+  "image": "e2184a67-49aa-436d-a8d9-83b2c3a08c7e.png"
+},{
+  "_id": {
+    "$oid": "5fc374c42f96472a28afc9ba"
+  },
+  "name": "Frozen Fruits Yogurt",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 5.6,
+  "image": "81b63e19-13b5-4361-9e92-c2a22b62bb71.png"
+},{
+  "_id": {
+    "$oid": "5fc374dd2f96472a28afc9bb"
+  },
+  "name": "Cheese",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 5.8,
+  "image": "fd7aadba-ef48-4545-a5d0-91fe0aa03142.png"
+},{
+  "_id": {
+    "$oid": "5fc375662f96472a28afc9bc"
+  },
+  "name": "Milkshake Smoothie",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 10,
+  "image": "e785b6ee-7ad6-41d3-805e-d31b4ead41e4.png"
+},{
+  "_id": {
+    "$oid": "5fc375db2f96472a28afc9bd"
+  },
+  "name": "White Cheese",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 5.9,
+  "image": "eb9a7dbc-bb6f-43a6-9b84-c8d6f5162a10.png"
+},{
+  "_id": {
+    "$oid": "5fc376132f96472a28afc9be"
+  },
+  "name": "Frozen Yogurt Kawartha",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 8.6,
+  "image": "d2c13b6e-b5b1-4b42-95b9-124d5bac1eb7.png"
+},{
+  "_id": {
+    "$oid": "5fc376632f96472a28afc9bf"
+  },
+  "name": "Eggs Medium Set",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 8,
+  "image": "0ed72fce-5f2c-4bc0-97cf-9c899ee5cd36.png"
+},{
+  "_id": {
+    "$oid": "5fc376982f96472a28afc9c0"
+  },
+  "name": "Milka Oreo",
+  "category_id": {
+    "$oid": "5f747d7eed9b49463cfad265"
+  },
+  "price": 5,
+  "image": "02f46b08-0b6b-4ba7-bd01-0170147d02c7.png"
+},{
+  "_id": {
+    "$oid": "5fc376fa2f96472a28afc9c1"
+  },
+  "name": "Chicken Golden Skewer",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 15.5,
+  "image": "5dd1c294-f12f-45cd-b9c6-c9d3f961b420.png"
+},{
+  "_id": {
+    "$oid": "5fc377632f96472a28afc9c2"
+  },
+  "name": "Fried fish dish",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 12.56,
+  "image": "1dc89bb8-4da2-4522-b69e-a7d49b6073fc.png"
+},{
+  "_id": {
+    "$oid": "5fc377892f96472a28afc9c3"
+  },
+  "name": "Shrimp curry",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 20,
+  "image": "e3c5c6d1-b533-4414-9586-3ab973528cfc.png"
+},{
+  "_id": {
+    "$oid": "5fc377ad2f96472a28afc9c4"
+  },
+  "name": "Japanese Cuisine Sushi",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 35,
+  "image": "47074206-ba6b-4454-8b97-42a4cc081c5f.png"
+},{
+  "_id": {
+    "$oid": "5fc377f22f96472a28afc9c5"
+  },
+  "name": "Fried chicken drumsticks",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 15.28,
+  "image": "fee254ea-f768-4da5-8de0-c243922daca2.png"
+},{
+  "_id": {
+    "$oid": "5fc378352f96472a28afc9c6"
+  },
+  "name": "Chicken burger",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 6.5,
+  "image": "52faec74-392b-42e6-8bfe-d1a386a9d191.png"
+},{
+  "_id": {
+    "$oid": "5fc3788c2f96472a28afc9c7"
+  },
+  "name": "Buffalo wing Barbecue chicken",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 26,
+  "image": "cd9447d7-2c4b-4934-85e1-f432b2e824c6.png"
+},{
+  "_id": {
+    "$oid": "5fc378ac2f96472a28afc9c8"
+  },
+  "name": "German Sausages",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 9.55,
+  "image": "79e4b31e-2f2c-409a-abf1-c779f143b5bd.png"
+},{
+  "_id": {
+    "$oid": "5fc378c02f96472a28afc9c9"
+  },
+  "name": "Slices of peppered meat",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 18.99,
+  "image": "1aac57a3-15eb-4992-ac90-d6c7d1d71c5c.png"
+},{
+  "_id": {
+    "$oid": "5fc3790c2f96472a28afc9ca"
+  },
+  "name": "Sausage",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 14.75,
+  "image": "a6f51ff1-2b80-4bda-bfa6-709b448968d7.png"
+},{
+  "_id": {
+    "$oid": "5fc3793d2f96472a28afc9cb"
+  },
+  "name": "Onigiri Yatai",
+  "category_id": {
+    "$oid": "5f747da8ed9b49463cfad267"
+  },
+  "price": 15,
+  "image": "5d68e615-02b5-49e8-b5ce-40043fd6c30d.png"
+},{
+  "_id": {
+    "$oid": "5fc379822f96472a28afc9cc"
+  },
+  "name": "Beer",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 5.6,
+  "image": "03abe33d-4333-4b18-9b3b-a9c051a49445.png"
+},{
+  "_id": {
+    "$oid": "5fc379942f96472a28afc9cd"
+  },
+  "name": "Orange juice",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 4.5,
+  "image": "d3363cdf-6912-4320-accc-a850143e1d69.png"
+},{
+  "_id": {
+    "$oid": "5fc37a502f96472a28afc9cf"
+  },
+  "name": "Iced tea Lemonade",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 8.6,
+  "image": "76a7caf4-203d-4063-9533-def08b8aa4c7.png"
+},{
+  "_id": {
+    "$oid": "5fc37ab82f96472a28afc9d0"
+  },
+  "name": "Green tea",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 3.5,
+  "image": "138817c3-4ce0-455d-be22-1d90635c5ccb.png"
+},{
+  "_id": {
+    "$oid": "5fc37ad82f96472a28afc9d1"
+  },
+  "name": "Green tea Iced tea Hong Kong-style",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 3.5,
+  "image": "8337f2b9-d5d6-4194-aed4-4099ad564813.png"
+},{
+  "_id": {
+    "$oid": "5fc37b1b2f96472a28afc9d3"
+  },
+  "name": "Espresso",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 2.6,
+  "image": "31c58b51-d1bb-48f0-b4f5-a84a1440dbce.png"
+},{
+  "_id": {
+    "$oid": "5fc37b5b2f96472a28afc9d4"
+  },
+  "name": "Cappuccino",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 3.4,
+  "image": "8b4fac03-0c51-4e19-99eb-dc3739192c7c.png"
+},{
+  "_id": {
+    "$oid": "5fc37ba92f96472a28afc9d5"
+  },
+  "name": "Fizzy Drinks",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 8.9,
+  "image": "58c8fb6a-3224-4cae-9ec8-878ddeb7b603.png"
+},{
+  "_id": {
+    "$oid": "5fc37c962f96472a28afc9d6"
+  },
+  "name": "Champagne",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 5.8,
+  "image": "1f47ab30-4fee-46be-83e0-8b698384e77d.png"
+},{
+  "_id": {
+    "$oid": "5fc37cc32f96472a28afc9d7"
+  },
+  "name": "Cocktail Beer ",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 8.6,
+  "image": "47cfde3c-42d1-45ce-9f95-506d7dbc8f90.png"
+},{
+  "_id": {
+    "$oid": "5fc37d082f96472a28afc9d8"
+  },
+  "name": "Juice Organic",
+  "category_id": {
+    "$oid": "5f747de3ed9b49463cfad268"
+  },
+  "price": 10,
+  "image": "c2426ec2-82ad-4f8f-ac1d-742c2d133493.png"
 }]

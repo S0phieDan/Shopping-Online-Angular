@@ -1,0 +1,375 @@
+[{
+  "_id": {
+    "$oid": "5fc3670837615c08c413d622"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 20.5,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "30/11/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3658537615c08c413d61e"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:16:56.781Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3672b37615c08c413d629"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 32.49,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "30/11/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3671037615c08c413d623"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:17:31.112Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3674837615c08c413d634"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 53,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "30/11/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3672d37615c08c413d62a"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:18:00.372Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3676937615c08c413d63d"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 69.98,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "30/11/2020",
+  "paymentMethod": "Visa",
+  "cart_id": {
+    "$oid": "5fc3674b37615c08c413d635"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:18:33.022Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3679937615c08c413d644"
+  },
+  "user_id": 888989557,
+  "totalPrice": 34.5,
+  "city": "Tel Aviv Jaffa",
+  "street": "Haharuv",
+  "shippingDate": "02/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3677c37615c08c413d63e"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:19:21.531Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc367aa37615c08c413d64a"
+  },
+  "user_id": 888989557,
+  "totalPrice": 27.5,
+  "city": "Tel Aviv Jaffa",
+  "street": "Haharuv",
+  "shippingDate": "02/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3679c37615c08c413d645"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:19:38.309Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc367bb37615c08c413d650"
+  },
+  "user_id": 888989557,
+  "totalPrice": 31.5,
+  "city": "Tel Aviv Jaffa",
+  "street": "Haharuv",
+  "shippingDate": "02/12/2020",
+  "paymentMethod": "Visa",
+  "cart_id": {
+    "$oid": "5fc367ac37615c08c413d64b"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:19:55.215Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc367ec37615c08c413d655"
+  },
+  "user_id": 356782941,
+  "totalPrice": 24,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "02/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc23c668f516c3d605030a3"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:20:44.357Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc367ff37615c08c413d65b"
+  },
+  "user_id": 356782941,
+  "totalPrice": 29.990000000000002,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "17/12/2020",
+  "paymentMethod": "Visa",
+  "cart_id": {
+    "$oid": "5fc367ee37615c08c413d656"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:21:03.519Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3681637615c08c413d664"
+  },
+  "user_id": 356782941,
+  "totalPrice": 43.5,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "17/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3680137615c08c413d65c"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:21:26.179Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3685937615c08c413d66a"
+  },
+  "user_id": 356782941,
+  "totalPrice": 35.5,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "17/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3684937615c08c413d665"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:22:33.847Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc368a737615c08c413d674"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 29,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "17/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3686a37615c08c413d66f"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:23:51.096Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc368c137615c08c413d67a"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 31.5,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "28/12/2020",
+  "paymentMethod": "Visa",
+  "cart_id": {
+    "$oid": "5fc368ac37615c08c413d675"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T09:24:17.301Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3afd32f96472a28afc9e8"
+  },
+  "user_id": 356782941,
+  "totalPrice": 35.5,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "21/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3685c37615c08c413d66b"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T14:27:31.572Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3c4bd6d7afb3a08ff44d4"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 42.660000000000004,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "23/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc368de37615c08c413d67b"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T15:56:45.842Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cafbceb9144688d6c8b2"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 63.39,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "25/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3c812ba075c34a0464654"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:23:23.137Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cb1d019d15395849b2f8"
+  },
+  "user_id": 1234567890,
+  "totalPrice": 22.9,
+  "city": "LA",
+  "street": "Baker",
+  "shippingDate": "22/01/2021",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3cb12019d15395849b2f4"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:23:57.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cbb5fb46182cecafbdd1"
+  },
+  "user_id": 356782941,
+  "totalPrice": 24.4,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "29/11/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3afef2f96472a28afc9e9"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:26:29.758Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cc3505305e0d3090d801"
+  },
+  "user_id": 356782941,
+  "totalPrice": 38.9,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "25/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3cc2605305e0d3090d7fb"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:28:37.579Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cc956dcdc50e84f16ef5"
+  },
+  "user_id": 356782941,
+  "totalPrice": 14.4,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "12/01/2021",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3cc4605305e0d3090d802"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:30:13.864Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cd137ec32f2f30a3638a"
+  },
+  "user_id": 356782941,
+  "totalPrice": 24.5,
+  "city": "Nahariya",
+  "street": "Vradim",
+  "shippingDate": "15/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3ccfe7ec32f2f30a36384"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:32:19.156Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fc3cd6f7ec32f2f30a3639b"
+  },
+  "user_id": 888989557,
+  "totalPrice": 48.89,
+  "city": "Tel Aviv Jaffa",
+  "street": "Haharuv",
+  "shippingDate": "23/12/2020",
+  "paymentMethod": "Paypal",
+  "cart_id": {
+    "$oid": "5fc3cd347ec32f2f30a36392"
+  },
+  "createdAt": {
+    "$date": "2020-11-29T16:33:51.278Z"
+  },
+  "__v": 0
+}]
