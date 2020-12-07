@@ -1,6 +1,6 @@
 export interface ResponseModel {
    success: boolean,
-   response: 
+   response:
    {
       name: String,
       email: String,

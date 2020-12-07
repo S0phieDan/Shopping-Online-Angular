@@ -11,7 +11,9 @@
         <app-search (searchInOrderEvent)="receiveSearchInOrderEvent($event)"></app-search>
     </div>
     <div class="cart-body">
-        <app-cart-item-order *ngFor="let cartItem of cartItems" [cartItem]="cartItem" [isExpanded]=true [query]="searchInput"></app-cart-item-order>
+        <app-cart-item-order *ngFor="let cartItem of cartItems" [cartItem]="cartItem" [isExpanded]=true
+            [query]="searchInput">
+        </app-cart-item-order>
     </div>
     <div class="cart-footer">
         <div class="total-sum">

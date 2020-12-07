@@ -14,15 +14,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  receiveIsRegisterEvent(value:boolean): void{
-    if(value){
+  receiveIsRegisterEvent(value: boolean): void {
+    if (value) {
       this.isRegisterPage = true;
       this.isLoginPage = false;
     }
   }
 
-  receiveIsLoginEvent(value: boolean): void{
-    if(value){
+  receiveIsLoginEvent(value: boolean): void {
+    if (value) {
       this.isLoginPage = true;
       this.isRegisterPage = false;
     }

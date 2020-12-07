@@ -13,32 +13,32 @@ export class SocketioService {
 
   constructor() { }
 
-  setupSocketConnection() :void {
+  setupSocketConnection(): void {
     this.socket = io('http://localhost:5000');
   }
 
-  emitData(data:ProductModel) :void {
+  emitData(data: ProductModel): void {
     this.socket.emit('addProduct', data);
   }
 
-  listenForData(){
+  listenForData() {
     return new Observable((observer) => {
-     this.socket.on('receiveAddedProduct', (data: ProductModel) => {
-         observer.next(data);
+      this.socket.on('receiveAddedProduct', (data: ProductModel) => {
+        observer.next(data);
       });
     });
   }
 
-  emitUpdateProduct(product: ProductModel): void{
+  emitUpdateProduct(product: ProductModel): void {
     this.socket.emit('updateProduct', product);
   }
 
-  listenForUpdatedProduct(){
+  listenForUpdatedProduct() {
     return new Observable((observer) => {
       this.socket.on('receiveUpdatedProduct', (data: ProductModel) => {
-          observer.next(data);
-       });
-     });
+        observer.next(data);
+      });
+    });
   }
 
 

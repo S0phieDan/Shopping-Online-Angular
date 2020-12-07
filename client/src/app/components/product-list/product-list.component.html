@@ -1,22 +1,15 @@
 <div class="options">
-    <app-categories [selectedCategory]="selectedCategory" (categoryEvent)="receiveCategoryChange($event)"></app-categories>
+    <app-categories [selectedCategory]="selectedCategory" (categoryEvent)="receiveCategoryChange($event)">
+    </app-categories>
     <app-search (searchEvent)="receiveSearchEvent($event)"></app-search>
 </div>
 <div class="list">
     <div class="products">
-        <app-product 
-        *ngFor="let product of productsPerPage" 
-        [product]="product"
-        (chooseProductEvent)="receiveChooseProductEvent($event)"
-        [isAdminLogged]="isAdminLogged"
-        (updateProductEvent)="receiveUpdateProductEvent($event)">
+        <app-product *ngFor="let product of productsPerPage" [product]="product"
+            (chooseProductEvent)="receiveChooseProductEvent($event)" [isAdminLogged]="isAdminLogged"
+            (updateProductEvent)="receiveUpdateProductEvent($event)">
         </app-product>
     </div>
-    <mat-paginator 
-        #paginator
-        [length]="products.length"
-        [pageSize]="pageSize"
-        (page)="pageEvent = handlePage($event)">
+    <mat-paginator #paginator [length]="products.length" [pageSize]="pageSize" (page)="pageEvent = handlePage($event)">
     </mat-paginator>
 </div>
-

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { FileTransferServiceService } from '../../services/file-transfer-service.service';
 import *  as fileSaver from 'file-saver';
 
@@ -14,19 +14,19 @@ export class OrderCompleteComponent implements OnInit {
   @Input() totalPrice: number;
   @Input() shippingDate: String;
 
-  constructor(private router:Router, private fileTransferService:FileTransferServiceService) { }
+  constructor(private router: Router, private fileTransferService: FileTransferServiceService) { }
 
   ngOnInit(): void {
   }
 
-  download(): void{
-    this.fileTransferService.downloadFile().subscribe( response => {
-      const blob = new Blob([response], {type: 'text/plain'});
+  download(): void {
+    this.fileTransferService.downloadFile().subscribe(response => {
+      const blob = new Blob([response], { type: 'text/plain' });
       fileSaver.saveAs(blob, 'receipt.txt');
     })
   }
 
-  finishOrder(): void{
+  finishOrder(): void {
     this.router.navigate(['/']);
   }
 

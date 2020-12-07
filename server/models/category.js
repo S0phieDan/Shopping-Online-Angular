@@ -4,9 +4,9 @@ const { Schema } = mongoose;
 const categorySchema = new Schema({
     category_name: String,
 },
-{
-    collection: 'categories'
-});
+    {
+        collection: 'categories'
+    });
 
 const Category = mongoose.model('Category', categorySchema);
 

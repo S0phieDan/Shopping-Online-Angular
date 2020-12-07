@@ -11,9 +11,9 @@ const userSchema = new Schema({
     street: String,
     isAdmin: Boolean
 },
-{
-    collection: 'users',
-});
+    {
+        collection: 'users',
+    });
 
 const User = mongoose.model('User', userSchema);
 

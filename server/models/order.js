@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 const { ObjectId } = mongoose.Types;
 
 const orderSchema = new Schema({
-    user_id: {type: Number, ref: 'User'},
-    cart_id: {type: ObjectId},
+    user_id: { type: Number, ref: 'User' },
+    cart_id: { type: ObjectId },
     totalPrice: Number,
     city: String,
     street: String,
@@ -12,9 +12,9 @@ const orderSchema = new Schema({
     paymentMethod: String,
     createdAt: Date
 },
-{
-    collection: 'orders'
-});
+    {
+        collection: 'orders'
+    });
 
 const Order = mongoose.model('Order', orderSchema);
 

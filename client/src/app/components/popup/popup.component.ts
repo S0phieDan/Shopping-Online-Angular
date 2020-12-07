@@ -16,7 +16,7 @@ export class PopupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  closePopup(){
+  closePopup() {
     this.popupEvent.emit(false);
   }
 

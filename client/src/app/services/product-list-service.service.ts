@@ -18,15 +18,15 @@ export class ProductListServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getProductList(categoryName:string): Observable<ProductModel[]>{
-    return this.http.get<ProductModel[]>('http://localhost:5000/products/'+categoryName, httpOptions);
+  getProductList(categoryName: string): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>('http://localhost:5000/products/' + categoryName, httpOptions);
   }
 
-  searchProduct(productName:string): Observable<ProductModel[]>{
-    return this.http.get<ProductModel[]>('http://localhost:5000/search/'+productName, httpOptions);
+  searchProduct(productName: string): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>('http://localhost:5000/search/' + productName, httpOptions);
   }
 
-  addProduct(item:any): Observable<CartItemModel>{
+  addProduct(item: any): Observable<CartItemModel> {
     return this.http.post<CartItemModel>('http://localhost:5000/cart', item, httpOptions);
   }
 }

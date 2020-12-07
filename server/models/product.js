@@ -4,13 +4,13 @@ const { ObjectId } = mongoose.Types;
 
 const productSchema = new Schema({
     name: String,
-    category_id: {type: ObjectId, ref: 'Category'},
+    category_id: { type: ObjectId, ref: 'Category' },
     price: Number,
-    image:String
+    image: String
 },
-{
-    collection: 'products',
-});
+    {
+        collection: 'products',
+    });
 
 const Product = mongoose.model('Product', productSchema);
 

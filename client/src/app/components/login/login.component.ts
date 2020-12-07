@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LoginServiceService } from '../../services/login-service.service';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { ResponseModel } from '../../model/response.model'
 import { SharedServiceService } from '../../services/shared-service.service';
 import { CartModel } from '../../model/cart.model';
@@ -14,76 +14,68 @@ import { ValidationServiceService } from '../../services/validation-service.serv
 export class LoginComponent implements OnInit {
   @Output() isRegisterEvent: EventEmitter<boolean> = new EventEmitter();
   email: String = "";
-  isEmailValid:boolean=true;
-  isPasswordValid:boolean=true;
+  isEmailValid: boolean = true;
+  isPasswordValid: boolean = true;
   password: String = "";
   isLogged: boolean = false;
-  isNewCart:boolean;
-  cartTotalPrice:Number;
-  cartCreationDate:String;
+  isNewCart: boolean;
+  cartTotalPrice: Number;
+  cartCreationDate: String;
   isAdmin: boolean = false;
   orderCreated: String;
   orderPrice: Number;
   shippingDate: String;
   welcomeMessage: boolean;
-  errorMessage:String;
-  message:String = 'Email/password are invalid or empty!';
+  errorMessage: String;
+  message: String = 'Email/password are invalid or empty!';
 
-  constructor(private loginService:LoginServiceService, private router:Router,  private sharedService:SharedServiceService, private validationService:ValidationServiceService) { }
+  constructor(private loginService: LoginServiceService, private router: Router, private sharedService: SharedServiceService, private validationService: ValidationServiceService) { }
 
   ngOnInit(): void {
     this.loginService.checkAuthorization().subscribe((data: ResponseModel) => {
-      if(data.success)
-      {
-        if(data.response.isAdmin)
-        {
+      if (data.success) {
+        if (data.response.isAdmin) {
           this.router.navigate(['/store-management']);
         }
-        else
-        {
+        else {
           this.isLogged = true;
-          
-          this.loginService.getCartDetails().subscribe((data: CartModel) => {
-            const {totalPrice, cartCreatedAt, emptyCart} = data;
 
-            if(cartCreatedAt)
-            {
+          this.loginService.getCartDetails().subscribe((data: CartModel) => {
+            const { totalPrice, cartCreatedAt, emptyCart } = data;
+
+            if (cartCreatedAt) {
               this.cartTotalPrice = totalPrice;
               this.cartCreationDate = new Date(cartCreatedAt).toLocaleDateString('en-GB');
               this.isNewCart = false;
             }
-            else if(emptyCart)
-            {
+            else if (emptyCart) {
               this.isNewCart = true;
-              
+
 
               this.loginService.getOrderDetails().subscribe((data: any) => {
-                if(data)
-                {
+                if (data) {
                   this.welcomeMessage = false;
-                  const {totalPrice, shippingDate, createdAt} = data;
+                  const { totalPrice, shippingDate, createdAt } = data;
                   this.orderPrice = totalPrice;
                   this.orderCreated = new Date(createdAt).toLocaleDateString('en-GB');
                   this.shippingDate = shippingDate;
                 }
-                else
-                {
+                else {
                   this.welcomeMessage = true;
                 }
               })
             }
           })
-                
+
         }
         this.sharedService.changeUserData(data);
       }
-      else
-      {
+      else {
         this.isLogged = false;
         this.sharedService.changeUserData(
           {
-            success:true,  
-            response: 
+            success: true,
+            response:
             {
               name: "Guest",
               email: "",
@@ -91,31 +83,30 @@ export class LoginComponent implements OnInit {
             }
           }
         )
-      } 
+      }
     });
   }
 
-  register(): void{
+  register(): void {
     this.isRegisterEvent.emit(true);
   }
 
-  setEmail(value: string){
+  setEmail(value: string) {
     this.isEmailValid = this.validationService.checkEmail(value);
     this.email = value;
     this.errorMessage = "";
   }
 
-  setPassword(value: string){
+  setPassword(value: string) {
     this.isPasswordValid = this.validationService.checkPassword(value);
     this.password = value;
     this.errorMessage = "";
   }
 
-  checkValidation(): boolean{
-    if(this.isEmailValid && this.isPasswordValid && this.email && this.password)
+  checkValidation(): boolean {
+    if (this.isEmailValid && this.isPasswordValid && this.email && this.password)
       return true;
-    else
-    {
+    else {
       this.isPasswordValid = false;
       this.isEmailValid = false;
       this.errorMessage = this.message;
@@ -123,60 +114,48 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  receivePopupEvent(value: boolean): void{
-    if(value === false)
+  receivePopupEvent(value: boolean): void {
+    if (value === false)
       this.errorMessage = "";
   }
 
-  login()
-  {
-    if(this.checkValidation())
-    {
+  login() {
+    if (this.checkValidation()) {
       this.loginService.loginUser(this.email, this.password).subscribe((data: ResponseModel) => {
-        if(data)
-        {
-          if(data.success)
-          {
+        if (data) {
+          if (data.success) {
             this.isLogged = true;
             this.email = "";
             this.password = "";
             this.sharedService.changeUserData(data);
-  
-            if(data.response.isAdmin)
-            {
+
+            if (data.response.isAdmin) {
               this.router.navigate(['/store-management']);
             }
-            else
-            {
-              this.loginService.createNewCart().subscribe((data: ResponseModel)=>{
-                if(data)
-                {
-                  const {success} = data;
-                  if(success)
-                  {
+            else {
+              this.loginService.createNewCart().subscribe((data: ResponseModel) => {
+                if (data) {
+                  const { success } = data;
+                  if (success) {
                     this.loginService.getCartDetails().subscribe((data: CartModel) => {
-                      const {totalPrice, cartCreatedAt, emptyCart} = data;
-                      if(cartCreatedAt)
-                      {
+                      const { totalPrice, cartCreatedAt, emptyCart } = data;
+                      if (cartCreatedAt) {
                         this.cartTotalPrice = totalPrice;
                         this.cartCreationDate = new Date(cartCreatedAt).toLocaleDateString('en-GB');
                         this.isNewCart = false;
                       }
-                      else if(emptyCart)
-                      {
+                      else if (emptyCart) {
                         this.isNewCart = true;
-  
+
                         this.loginService.getOrderDetails().subscribe((data: any) => {
-                          if(data)
-                          {
+                          if (data) {
                             this.welcomeMessage = false;
-                            const {totalPrice, shippingDate, createdAt} = data;
+                            const { totalPrice, shippingDate, createdAt } = data;
                             this.orderPrice = totalPrice;
                             this.orderCreated = new Date(createdAt).toLocaleDateString('en-GB');
                             this.shippingDate = shippingDate;
                           }
-                          else
-                          {
+                          else {
                             this.welcomeMessage = true;
                           }
                         })
@@ -187,8 +166,7 @@ export class LoginComponent implements OnInit {
               })
             }
           }
-          else
-          {
+          else {
             this.errorMessage = this.message;
           }
 
@@ -197,7 +175,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  goToStore(){
+  goToStore() {
     this.router.navigate(['/store']);
   }
 

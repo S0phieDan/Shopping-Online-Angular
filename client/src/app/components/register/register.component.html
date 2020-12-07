@@ -13,8 +13,8 @@
             <span class="create-user" (click)="login()">Login Here</span>
         </div>
     </form>
-    <app-popup *ngIf="isOpenPopup" (popupEvent)="receivePopupEvent($event)" [isSuccess]="isSuccess" [successMessage]="successMessage" [errorMessage]="errorMessage"></app-popup>
+    <app-popup *ngIf="isOpenPopup" (popupEvent)="receivePopupEvent($event)" [isSuccess]="isSuccess"
+        [successMessage]="successMessage" [errorMessage]="errorMessage"></app-popup>
     <div class="img-register">
     </div>
 </div>
-

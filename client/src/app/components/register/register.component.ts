@@ -11,24 +11,23 @@ import { RegisterServiceService } from '../../services/register-service.service'
 export class RegisterComponent implements OnInit {
   @Output() isLoginEvent: EventEmitter<boolean> = new EventEmitter();
   @ViewChild(StepperComponent) stepper;
-  isOpenPopup:boolean = false;
-  isSuccess:boolean = false;
-  successMessage:String = "Congratulations, your account has been successfully created.\nPlease Login.";
-  errorMessage:String = "There is a user with the same data.\nCouldn't create new user!";
+  isOpenPopup: boolean = false;
+  isSuccess: boolean = false;
+  successMessage: String = "Congratulations, your account has been successfully created.\nPlease Login.";
+  errorMessage: String = "There is a user with the same data.\nCouldn't create new user!";
 
-  constructor(private registerService:RegisterServiceService) { }
+  constructor(private registerService: RegisterServiceService) { }
 
   ngOnInit(): void {
 
   }
 
-  login(): void{
+  login(): void {
     this.isLoginEvent.emit(true);
   }
 
-  receiveCreateAccountEvent(value: boolean): void{
-    if(value)
-    {
+  receiveCreateAccountEvent(value: boolean): void {
+    if (value) {
       const user: UserModel = {
         _id: this.stepper.id,
         email: this.stepper.email,
@@ -40,13 +39,11 @@ export class RegisterComponent implements OnInit {
         isAdmin: false
       }
       this.registerService.createNewAccount(user).subscribe((data: boolean) => {
-        if(data)
-        {
+        if (data) {
           this.isSuccess = true;
           this.isOpenPopup = true;
         }
-        else
-        {
+        else {
           this.isSuccess = false;
           this.isOpenPopup = true;
         }
@@ -54,7 +51,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  receivePopupEvent(value:boolean): void{
+  receivePopupEvent(value: boolean): void {
     this.isOpenPopup = value;
   }
 }

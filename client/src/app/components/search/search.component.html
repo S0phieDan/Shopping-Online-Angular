@@ -1,13 +1,7 @@
 <div class="search-bar">
     <div class="search-product">
-        <input 
-            type="text" 
-            id="search-text" 
-            name="search-text" 
-            placeholder="Search product..." 
-            [value]="searchInput"
-            (keyup)="setSearchInput($event.target.value)" 
-            (keydown.enter)="search()">
+        <input type="text" id="search-text" name="search-text" placeholder="Search product..." [value]="searchInput"
+            (keyup)="setSearchInput($event.target.value)" (keydown.enter)="search()">
         <i class="fa fa-search fa-lg" (click)="search()"></i>
     </div>
 </div>

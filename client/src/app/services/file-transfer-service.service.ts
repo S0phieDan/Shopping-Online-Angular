@@ -10,7 +10,7 @@ export class FileTransferServiceService {
 
   constructor(private http: HttpClient) { }
 
-  downloadFile(): Observable<any>{
-    return this.http.get('http://localhost:5000/download-receipt', {responseType: 'blob', withCredentials: true});
+  downloadFile(): Observable<any> {
+    return this.http.get('http://localhost:5000/download-receipt', { responseType: 'blob', withCredentials: true });
   }
 }

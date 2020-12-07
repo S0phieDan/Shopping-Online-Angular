@@ -1,5 +1,5 @@
 export interface OrderModel {
-    user_id: 
+    user_id:
     {
         _id: Number
     },

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } fro
 import { OrderDetailsServiceService } from '../../services/order-details-service.service';
 import { RegisterServiceService } from '../../services/register-service.service';
 import { UserModel } from '../../model/user.model';
-import {MatCalendarCellClassFunction} from '@angular/material/datepicker';
+import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { OrderModel } from '../../model/order.model';
 import { Router } from '@angular/router';
 import { ValidationServiceService } from '../../services/validation-service.service';
@@ -14,41 +14,40 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   encapsulation: ViewEncapsulation.None
 })
 export class OrderDetailsComponent implements OnInit {
-  first_name: String ="";
-  last_name: String="";
+  first_name: String = "";
+  last_name: String = "";
   user_id: Number;
-  city: String="";
-  isCityValid:boolean=true;
-  street: String="";
-  isStreetValid:boolean=true;
-  inputCity: String ="";
-  inputStreet: String ="";
-  israelCities:String[];
+  city: String = "";
+  isCityValid: boolean = true;
+  street: String = "";
+  isStreetValid: boolean = true;
+  inputCity: String = "";
+  inputStreet: String = "";
+  israelCities: String[];
   shippingDate: string;
-  isShippingDateValid:boolean=true;
-  searchCitiesArray:String[];
-  paymentMethod:String;
-  fullScheduleDays:any=[20, 15, 3];
-  currentDate:string = new Date(Date.now()).toISOString().split('T')[0];
-  @Input() totalPrice:Number;
+  isShippingDateValid: boolean = true;
+  searchCitiesArray: String[];
+  paymentMethod: String;
+  fullScheduleDays: any = [20, 15, 3];
+  currentDate: string = new Date(Date.now()).toISOString().split('T')[0];
+  @Input() totalPrice: Number;
   @Output() confirmOrderEvent = new EventEmitter<any>();
-  orderDates:string[] = [];
-  errorMessage:String;
-  message:String = 'Input fields are invalid or empty!';
+  orderDates: string[] = [];
+  errorMessage: String;
+  message: String = 'Input fields are invalid or empty!';
 
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     // Only highligh dates inside the month view.
     let className = '';
-      if (view === 'month') {
-        const date = cellDate.toLocaleDateString('en-GB');
-        
-        for(let i=0; i<this.orderDates.length; i++){
-          if(date.localeCompare(this.orderDates[i]) === 0)
-          {
-            className =  'full';
-          }  
+    if (view === 'month') {
+      const date = cellDate.toLocaleDateString('en-GB');
+
+      for (let i = 0; i < this.orderDates.length; i++) {
+        if (date.localeCompare(this.orderDates[i]) === 0) {
+          className = 'full';
         }
       }
+    }
     return className;
   }
 
@@ -56,34 +55,32 @@ export class OrderDetailsComponent implements OnInit {
     const date = d.toLocaleDateString('en-GB');
     let filter = true;
 
-    for(let i=0; i<this.orderDates.length; i++){
-      if(date.localeCompare(this.orderDates[i]) === 0)
-      {
-        filter =  false;
-      }  
+    for (let i = 0; i < this.orderDates.length; i++) {
+      if (date.localeCompare(this.orderDates[i]) === 0) {
+        filter = false;
+      }
     }
     return filter;
   }
 
-  constructor(private orderDetailsService:OrderDetailsServiceService, 
-              private registerService:RegisterServiceService, 
-              private router:Router,
-              private validationService:ValidationServiceService) { }
+  constructor(private orderDetailsService: OrderDetailsServiceService,
+    private registerService: RegisterServiceService,
+    private router: Router,
+    private validationService: ValidationServiceService) { }
 
   ngOnInit(): void {
     this.orderDetailsService.getUserData().subscribe((data: UserModel) => {
-      if(data)
-       this.first_name = data.first_name;
-       this.last_name = data.last_name;
-       this.user_id = data._id;
-       this.city = data.city;
-       this.street = data.street;
-       
+      if (data)
+        this.first_name = data.first_name;
+      this.last_name = data.last_name;
+      this.user_id = data._id;
+      this.city = data.city;
+      this.street = data.street;
+
     });
 
     this.registerService.getIsraelCities().subscribe((cities) => {
-      if(cities)
-      {
+      if (cities) {
         const records = cities.result.records;
         this.israelCities = records.map(record => record.Name);
         this.searchCitiesArray = this.israelCities;
@@ -91,67 +88,60 @@ export class OrderDetailsComponent implements OnInit {
     });
 
     this.orderDetailsService.getOrderDates().subscribe((list: string[]) => {
-      for(let i=0; i<list.length-1; i++)
-      {
+      for (let i = 0; i < list.length - 1; i++) {
         let count = 1;
-        for(let j=i+1; j<list.length; j++)
-        {
-          if(list[i] === list[j])
-          {
+        for (let j = i + 1; j < list.length; j++) {
+          if (list[i] === list[j]) {
             count++;
           }
         }
-        if(count > 3)
-        {
+        if (count > 3) {
           this.orderDates.push(list[i]);
         }
       }
     })
   }
 
-  doubleClickCity(): void{
+  doubleClickCity(): void {
     this.inputCity = this.city;
   }
 
-  doubleClickStreet(): void{
+  doubleClickStreet(): void {
     this.inputStreet = this.street;
   }
 
-  changeCity(value: string): void{
-    if(value)
-    {
+  changeCity(value: string): void {
+    if (value) {
       this.inputCity = value;
       this.isCityValid = this.validationService.checkString(value);
       this.errorMessage = "";
     }
   }
 
-  setSearchCityName(value:string): void {
+  setSearchCityName(value: string): void {
     this.inputCity = value;
     this.setSearchArray(value);
     this.isCityValid = this.validationService.checkString(value);
     this.errorMessage = "";
   }
 
-  setSearchArray(value:string): void {
+  setSearchArray(value: string): void {
     this.searchCitiesArray = [];
     this.israelCities.forEach(city => {
-      if(city.toLowerCase().includes(value.toLowerCase()))
-      {
+      if (city.toLowerCase().includes(value.toLowerCase())) {
         this.searchCitiesArray.push(city);
       }
     })
   }
 
-  setStreet(value:string): void {
+  setStreet(value: string): void {
     this.inputStreet = value;
     this.isStreetValid = this.validationService.checkString(value);
     this.errorMessage = "";
   }
 
   setShippingDate(value: Date): void {
-    if(value && value instanceof Date)
-    {
+    if (value && value instanceof Date) {
       this.shippingDate = value.toLocaleDateString('en-GB');
       this.isShippingDateValid = this.validationService.checkDate(value);
       this.errorMessage = "";
@@ -159,17 +149,15 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   setPaymentMethod(value: String): void {
-    if(value)
-    {
+    if (value) {
       this.paymentMethod = value;
     }
   }
 
   confirmOrder(): void {
-    if(this.city && this.street && this.shippingDate && this.paymentMethod && this.isStreetValid && this.isCityValid && this.isShippingDateValid)
-    {
+    if (this.city && this.street && this.shippingDate && this.paymentMethod && this.isStreetValid && this.isCityValid && this.isShippingDateValid) {
       const order: OrderModel = {
-        user_id: 
+        user_id:
         {
           _id: this.user_id
         },
@@ -181,19 +169,16 @@ export class OrderDetailsComponent implements OnInit {
       }
 
       this.orderDetailsService.createNewOrder(order).subscribe((data) => {
-        if(data)
-        {
-          this.confirmOrderEvent.emit({data: data, isOrderComplete: true});
+        if (data) {
+          this.confirmOrderEvent.emit({ data: data, isOrderComplete: true });
         }
-        else
-        {
+        else {
           this.errorMessage = 'There was a problem while creating your order.\nPlease try again.';
         }
       });
 
     }
-    else
-    {
+    else {
       this.errorMessage = this.message;
       this.isCityValid = false;
       this.isStreetValid = false;
@@ -202,8 +187,8 @@ export class OrderDetailsComponent implements OnInit {
     }
   }
 
-  receivePopupEvent(value: boolean): void{
-    if(value === false)
+  receivePopupEvent(value: boolean): void {
+    if (value === false)
       this.errorMessage = "";
   }
 }

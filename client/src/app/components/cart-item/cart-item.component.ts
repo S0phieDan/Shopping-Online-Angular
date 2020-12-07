@@ -7,9 +7,9 @@ import { CartItemModel } from '../../model/cartItem.model';
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements OnInit {
-  @Input() cartItem:CartItemModel;
-  @Input() isExpanded:boolean;
-  @Input() isOrder:boolean;
+  @Input() cartItem: CartItemModel;
+  @Input() isExpanded: boolean;
+  @Input() isOrder: boolean;
   @Output() deleteCartItemEvent: EventEmitter<CartItemModel> = new EventEmitter();
 
   constructor() { }
@@ -17,7 +17,7 @@ export class CartItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteItemFromCart(cartItem: CartItemModel): void{
+  deleteItemFromCart(cartItem: CartItemModel): void {
     this.deleteCartItemEvent.emit(cartItem);
   }
 }

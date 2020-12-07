@@ -16,11 +16,11 @@ export class StoreDataServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getAmountOfProducts(): Observable<Number>{
+  getAmountOfProducts(): Observable<Number> {
     return this.http.get<Number>('/api/products-amount', httpOptions);
   }
 
-  getAmountOfOrders(): Observable<Number>{
+  getAmountOfOrders(): Observable<Number> {
     return this.http.get<Number>('/api/orders-amount', httpOptions);
   }
 }

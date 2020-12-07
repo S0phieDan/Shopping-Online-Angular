@@ -13,10 +13,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class NewProductFormServiceService {
-  
+
   constructor(private http: HttpClient) { }
 
-  insertImage(fd:FormData): Observable<any>{
+  insertImage(fd: FormData): Observable<any> {
     return this.http.post<any>('/api/api/images', fd, {});
   }
 }

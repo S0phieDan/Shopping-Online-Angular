@@ -20,15 +20,15 @@ export class SharedServiceService {
 
   constructor() { }
 
-  addCartItemToCart(cartItem: CartItemModel){
+  addCartItemToCart(cartItem: CartItemModel) {
     this.cartItemToAdd.next(cartItem);
   }
 
-  changeUserData(data: ResponseModel){
+  changeUserData(data: ResponseModel) {
     this.userData.next(data);
   }
 
-  updateProduct(product: ProductModel){
+  updateProduct(product: ProductModel) {
     this.productToUpdate.next(product);
   }
 

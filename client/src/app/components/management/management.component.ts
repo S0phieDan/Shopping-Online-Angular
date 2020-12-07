@@ -6,23 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./management.component.css']
 })
 export class ManagementComponent implements OnInit {
-  isAdminLogged:boolean = true;
+  isAdminLogged: boolean = true;
   isUpdateProductOpened: boolean = false;
-  isHiddenBody:boolean = true;
+  isHiddenBody: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  receiveIsEditProductOpened(value: boolean) : void{
-    if(value)
-    {
+  receiveIsEditProductOpened(value: boolean): void {
+    if (value) {
       this.isHiddenBody = false;
     }
   }
 
-  receiveCancelUpdateEvent(value: boolean) : void{
+  receiveCancelUpdateEvent(value: boolean): void {
     this.isHiddenBody = true;
   }
 

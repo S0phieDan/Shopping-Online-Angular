@@ -18,15 +18,15 @@ export class OrderDetailsServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getUserData(): Observable<UserModel>{
+  getUserData(): Observable<UserModel> {
     return this.http.get<UserModel>('/api/user-data', httpOptions);
   }
 
-  createNewOrder(order: OrderModel): Observable<any>{
+  createNewOrder(order: OrderModel): Observable<any> {
     return this.http.post<any>('/api/order', order, httpOptions);
   }
 
-  getOrderDates(): Observable<string[]>{
+  getOrderDates(): Observable<string[]> {
     return this.http.get<string[]>('/api/order', httpOptions);
   }
 }

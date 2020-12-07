@@ -9,10 +9,10 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderCompleteComponent } from './components/order-complete/order-complete.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'store', component: StoreComponent, canActivate:[AuthGuard]},
-  {path: 'store-management', component: ManagementComponent, canActivate:[AdminAuthGuard]},
-  {path: 'store/order-details', component: OrderComponent, canActivate: [AuthGuard]}
+  { path: '', component: HomeComponent },
+  { path: 'store', component: StoreComponent, canActivate: [AuthGuard] },
+  { path: 'store-management', component: ManagementComponent, canActivate: [AdminAuthGuard] },
+  { path: 'store/order-details', component: OrderComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

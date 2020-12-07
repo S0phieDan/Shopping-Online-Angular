@@ -4,14 +4,11 @@
             <app-cart-order (totalSumEvent)="receiveTotalSumEvent($event)"></app-cart-order>
         </div>
         <div class="order-details">
-            <app-order-details [totalPrice]="totalPrice" (confirmOrderEvent)="receiveConfirmOrderEvent($event)"></app-order-details>
+            <app-order-details [totalPrice]="totalPrice" (confirmOrderEvent)="receiveConfirmOrderEvent($event)">
+            </app-order-details>
         </div>
     </div>
-    <app-order-complete *ngIf="isOrderComplete"
-                        [order_id]="order_id" 
-                        [orderCreationDate]="orderCreationDate" 
-                        [totalPrice]="totalPrice"
-                        [shippingDate]="shippingDate"
-                        >
-                    </app-order-complete>
+    <app-order-complete *ngIf="isOrderComplete" [order_id]="order_id" [orderCreationDate]="orderCreationDate"
+        [totalPrice]="totalPrice" [shippingDate]="shippingDate">
+    </app-order-complete>
 </div>

@@ -17,11 +17,11 @@ export class RegisterServiceService {
 
   constructor(private http: HttpClient) { }
 
-  createNewAccount(user: UserModel): Observable<boolean>{
-    return this.http.post<boolean>('/api/register',user, httpOptions);
+  createNewAccount(user: UserModel): Observable<boolean> {
+    return this.http.post<boolean>('/api/register', user, httpOptions);
   }
 
-  getIsraelCities():Observable<any>{
+  getIsraelCities(): Observable<any> {
     return this.http.get<any>('https://data.gov.il/api/3/action/datastore_search?resource_id=eb548bfa-a7ba-45c4-be7d-2e8271f55f70');
   }
 }

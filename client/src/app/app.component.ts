@@ -13,34 +13,31 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   name: String = "Guest";
   email: String;
-  data:ResponseModel;
+  data: ResponseModel;
 
-  constructor(private sharedService:SharedServiceService, 
-              private socketService:SocketioService, 
-              private loginService:LoginServiceService,
-              private router:Router
-              ) { }
+  constructor(private sharedService: SharedServiceService,
+    private socketService: SocketioService,
+    private loginService: LoginServiceService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.loginService.checkAuthorization().subscribe((data: ResponseModel) => {
-      if(data.success)
-      {
-        const {response} = data;
-        const {email, name} = response;
+      if (data.success) {
+        const { response } = data;
+        const { email, name } = response;
         this.name = name;
         this.email = email;
       }
     });
-    
+
     this.socketService.setupSocketConnection();
 
     this.sharedService.currentUserData.subscribe(data => {
-      if(data)
-      {
-        if(data.success)
-        {
-          const {response} = data;
-          const {email, name} = response;
+      if (data) {
+        if (data.success) {
+          const { response } = data;
+          const { email, name } = response;
           this.name = name;
           this.email = email;
         }
@@ -48,8 +45,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  signOut(): void{
-    
+  signOut(): void {
+
     this.loginService.destroySession().subscribe((data: ResponseModel) => {
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.onSameUrlNavigation = 'reload';

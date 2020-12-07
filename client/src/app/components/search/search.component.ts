@@ -9,21 +9,21 @@ import { ProductModel } from '../../model/product.model';
 export class SearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
   @Output() searchInOrderEvent = new EventEmitter<string>();
-  searchInput:string = "";
-  productsFromSearch:ProductModel[] = [];
+  searchInput: string = "";
+  productsFromSearch: ProductModel[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  setSearchInput(value:string): void{
+  setSearchInput(value: string): void {
     this.searchInput = value;
     this.searchInOrderEvent.emit(this.searchInput);
   }
 
   search(): void {
-    if(this.searchInput){
+    if (this.searchInput) {
       this.searchEvent.emit(this.searchInput);
       this.searchInput = "";
     }

@@ -17,15 +17,15 @@ export class CartServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getCartItems(): Observable<CartItemModel[]>{
+  getCartItems(): Observable<CartItemModel[]> {
     return this.http.get<CartItemModel[]>('/api/cart', httpOptions);
   }
 
-  deleteCartItem(cartItem_id:string): Observable<string>{
-    return this.http.post<string>('/api/delete', {cartItem_id: cartItem_id}, httpOptions);
+  deleteCartItem(cartItem_id: string): Observable<string> {
+    return this.http.post<string>('/api/delete', { cartItem_id: cartItem_id }, httpOptions);
   }
 
-  clearCart(): Observable<String>{
+  clearCart(): Observable<String> {
     return this.http.get<String>('/api/clearCart', httpOptions);
   }
 }

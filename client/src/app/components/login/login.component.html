@@ -1,5 +1,5 @@
 <div class="login">
-    <form  *ngIf="!isLogged">
+    <form *ngIf="!isLogged">
         <div class="login-title">
             <h1 class="h-login">
                 Login
@@ -7,11 +7,13 @@
         </div>
         <div [ngClass]="{'form-group': true, 'danger': !isEmailValid}">
             <i class="fa fa-envelope"></i>
-            <input type="email"  class="email input" id="email" required placeholder="Email" [value]="email" autocomplete="off" (keyup)="setEmail($event.target.value)">
+            <input type="email" class="email input" id="email" required placeholder="Email" [value]="email"
+                autocomplete="off" (keyup)="setEmail($event.target.value)">
         </div>
         <div [ngClass]="{'form-group': true, 'danger': !isPasswordValid}">
             <i class="fa fa-lock fa-lg"></i>
-            <input type="password" class="password input" placeholder="Password" [value]="password" autocomplete="off" (keyup)="setPassword($event.target.value)">
+            <input type="password" class="password input" placeholder="Password" [value]="password" autocomplete="off"
+                (keyup)="setPassword($event.target.value)">
         </div>
         <button type="button" class="btn-login" (click)="login()">
             <span>Enter Store</span>
@@ -22,11 +24,12 @@
             </span>
             <span class="create-user" (click)="register()">Create an account</span>
         </div>
-        <app-popup *ngIf="errorMessage" [errorMessage]="errorMessage" [isSuccess]="false" (popupEvent)="receivePopupEvent($event)"></app-popup>
+        <app-popup *ngIf="errorMessage" [errorMessage]="errorMessage" [isSuccess]="false"
+            (popupEvent)="receivePopupEvent($event)"></app-popup>
     </form>
     <div>
         <div *ngIf="isLogged && isNewCart" class="start">
-            <button  type="button" class="btn-start-shopping" (click)="goToStore()">
+            <button type="button" class="btn-start-shopping" (click)="goToStore()">
                 <h1>
                     <span>Start Shopping</span>
                     <i class="fa fa-shopping-cart fa-lg"></i>
@@ -72,4 +75,3 @@
     <div class="img-login">
     </div>
 </div>
-

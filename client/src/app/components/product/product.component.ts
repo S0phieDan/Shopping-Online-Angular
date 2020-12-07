@@ -8,25 +8,25 @@ import { SharedServiceService } from '../../services/shared-service.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() product:ProductModel;
-  @Input() isAdminLogged:boolean;
+  @Input() product: ProductModel;
+  @Input() isAdminLogged: boolean;
   @Output() chooseProductEvent: EventEmitter<any> = new EventEmitter();
   @Output() updateProductEvent: EventEmitter<boolean> = new EventEmitter();
-  isPopup:boolean = false;
-  quantity:number = 1;
+  isPopup: boolean = false;
+  quantity: number = 1;
 
-  constructor(private sharedService:SharedServiceService) { }
+  constructor(private sharedService: SharedServiceService) { }
 
   ngOnInit(): void {
   }
 
-  setQuantity(amount:number): void{
+  setQuantity(amount: number): void {
     this.quantity = amount;
   }
 
-  chooseProduct(product: ProductModel): void{
-    if(this.quantity){
-      this.chooseProductEvent.emit({product: product, quantity: this.quantity});
+  chooseProduct(product: ProductModel): void {
+    if (this.quantity) {
+      this.chooseProductEvent.emit({ product: product, quantity: this.quantity });
       this.closePopup();
       this.quantity = 1;
     }
@@ -36,19 +36,17 @@ export class ProductComponent implements OnInit {
     this.isPopup = true;
   }
 
-  closePopup(): void{
+  closePopup(): void {
     this.isPopup = false;
     this.quantity = 1;
   }
 
-  functionTrigger(product:ProductModel): void{
-    if(this.isAdminLogged)
-    {
+  functionTrigger(product: ProductModel): void {
+    if (this.isAdminLogged) {
       this.updateProductEvent.emit(true);
       this.sharedService.updateProduct(product);
     }
-    else
-    {
+    else {
       this.openPopup();
     }
 

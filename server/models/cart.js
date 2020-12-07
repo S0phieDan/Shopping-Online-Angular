@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const cartSchema = new Schema({
-    user_id: {type: Number, ref: 'User'},
+    user_id: { type: Number, ref: 'User' },
     createdAt: Date,
 },
-{
-    collection: 'carts'
-});
+    {
+        collection: 'carts'
+    });
 
 const Cart = mongoose.model('Cart', cartSchema);
 

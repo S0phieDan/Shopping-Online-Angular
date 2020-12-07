@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartItemModel } from '../../model/cartItem.model';
 
 @Component({
@@ -7,8 +7,8 @@ import { CartItemModel } from '../../model/cartItem.model';
   styleUrls: ['./cart-item-order.component.css']
 })
 export class CartItemOrderComponent implements OnInit {
-  @Input() cartItem:CartItemModel;
-  @Input() isExpanded:boolean;
+  @Input() cartItem: CartItemModel;
+  @Input() isExpanded: boolean;
   @Input() query: string;
 
 
@@ -18,12 +18,12 @@ export class CartItemOrderComponent implements OnInit {
   }
 
   public highlight() {
-    if(!this.query) {
-        return this.cartItem.product_id.name;
+    if (!this.query) {
+      return this.cartItem.product_id.name;
     }
     return this.cartItem.product_id.name.replace(new RegExp(this.query, "gi"), match => {
-      return '<mark>'+ match +'</mark>';
+      return '<mark>' + match + '</mark>';
     });
-}
+  }
 
 }

@@ -12,7 +12,7 @@ export class OrderComponent implements OnInit {
   order_id: String;
   orderCreationDate: String;
   shippingDate: String;
-  isOrderComplete:boolean = false;
+  isOrderComplete: boolean = false;
 
   constructor() { }
 
@@ -25,7 +25,7 @@ export class OrderComponent implements OnInit {
 
   receiveConfirmOrderEvent(value: any): void {
     this.isOrderComplete = value.isOrderComplete;
-    const {order_id, createdAt, totalPrice, shippingDate} = value.data;
+    const { order_id, createdAt, totalPrice, shippingDate } = value.data;
     this.order_id = order_id;
     this.orderCreationDate = new Date(createdAt).toLocaleDateString('en-GB');
     this.totalPrice = totalPrice;

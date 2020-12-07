@@ -9,28 +9,34 @@
     <div [ngClass]="{'update-product-body': true, 'hidden': isHiddenBody}">
         <form>
             <div [ngClass]="{'form-group': true, 'danger': !isProductNameValid}">
-                <input type="text" class="field" name="productName" placeholder="Product Name" autocomplete="off" [value]="productName" (keyup)="setProductName($event.target.value)"> 
+                <input type="text" class="field" name="productName" placeholder="Product Name" autocomplete="off"
+                    [value]="productName" (keyup)="setProductName($event.target.value)">
             </div>
             <div [ngClass]="{'form-group': true, 'danger': !isPriceValid}">
-                <input type="number" step="0.01" min="0" class="field" name="price" placeholder="Price" [value]="price"  autocomplete="off" (keyup)="setPrice($event.target.value)">
+                <input type="number" step="0.01" min="0" class="field" name="price" placeholder="Price" [value]="price"
+                    autocomplete="off" (keyup)="setPrice($event.target.value)">
             </div>
             <div class="dropdown">
                 <div [ngClass]="{'form-group': true, 'danger': !isCategoryValid}">
-                    <input type="text" class="field category" name="category" placeholder="Categoty" [value]="category" (click)="openCategoryList()" autocomplete="off">
+                    <input type="text" class="field category" name="category" placeholder="Categoty" [value]="category"
+                        (click)="openCategoryList()" autocomplete="off">
                 </div>
                 <div *ngIf="isOpenList" class="dropdown-content">
                     <ul *ngIf="categories">
-                        <li *ngFor="let category of categories" (click)="chooseCategory($event.target.innerText)">{{category.category_name}}</li>
+                        <li *ngFor="let category of categories" (click)="chooseCategory($event.target.innerText)">
+                            {{category.category_name}}</li>
                     </ul>
                 </div>
             </div>
             <div [ngClass]="{'form-group image-input': true, 'danger': !isImagePathValid}">
                 <input #imageElem type="file" class="field" (change)="handleImage()">
                 <div class="text-muted">Choose image for this product.</div>
-                <img *ngIf="imagePath" src="http://localhost:5000/api/images/{{imagePath}}" class="update-product-image">
+                <img *ngIf="imagePath" src="http://localhost:5000/api/images/{{imagePath}}"
+                    class="update-product-image">
             </div>
             <div class="form-group-btn">
-                <app-popup *ngIf="isOpenPopup" [isSuccess]="isSuccess" [errorMessage]="errorMessage" [successMessage]="successMessage" (popupEvent)="receivePopupEvent($event)"></app-popup>
+                <app-popup *ngIf="isOpenPopup" [isSuccess]="isSuccess" [errorMessage]="errorMessage"
+                    [successMessage]="successMessage" (popupEvent)="receivePopupEvent($event)"></app-popup>
             </div>
             <div class="buttons">
                 <button class="btn update" (click)="update()">Save</button>
