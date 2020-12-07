@@ -86,7 +86,3 @@
 .cart-item:hover .delete{
     display: inline-block;
 }
-
-.hide{
-    display: none;
-}

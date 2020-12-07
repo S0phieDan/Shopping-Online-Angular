@@ -76,14 +76,6 @@
     height: 6%;
 }
 
-.space-around{
-    justify-content: space-around;
-}
-
-.center{
-    text-align: center;
-}
-
 .total-sum{
     font-size: large;
     font-weight: 600;
