@@ -1,6 +1,6 @@
 <div class="categories">
     <ul class="ul-categories">
-        <li [ngClass]="{'li-category': true, 'li-category-active': selectedCategory == i}"
+        <li [class.li-category]="true" [class.li-category-active]="selectedCategory === i"
             *ngFor="let category of categories; index as i" (click)="sendCategoryChange($event, i)">
             {{category.category_name}}</li>
     </ul>

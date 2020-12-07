@@ -3,24 +3,26 @@
         <i *ngIf="isExpanded" class="fa fa-angle-double-left cart-change" (click)="changeCartSize(true)"></i>
         <i *ngIf="!isExpanded" class="fa fa-angle-double-right cart-change" (click)="changeCartSize(false)"></i>
         <div class="cart-header-title">
-            <h2 [ngClass]="{'hide': !isExpanded}">CART</h2>
+            <h2 [class.hide]="!isExpanded">CART</h2>
             <i class="fa fa-shopping-cart fa-2x"></i>
         </div>
         <div class="cart-details">
             <div class="num-of-items">
                 Items: {{cartItems.length}}
             </div>
-            <button type="button" [ngClass]="{'btn-clear-cart': true, 'hide': !isExpanded}" (click)="deleteAllCartItems()" >CLEAR CART</button>
+            <button type="button" [class.btn-clear-cart]="isExpanded" [class.hide]="!isExpanded"
+                (click)="deleteAllCartItems()">CLEAR CART</button>
         </div>
     </div>
     <div #cartBody class="cart-body">
-        <app-cart-item *ngFor="let cartItem of cartItems" [isExpanded]="isExpanded" [cartItem]="cartItem" (deleteCartItemEvent)="receiveDeleteCartItemEvent($event)"></app-cart-item>
+        <app-cart-item *ngFor="let cartItem of cartItems" [isExpanded]="isExpanded" [cartItem]="cartItem"
+            (deleteCartItemEvent)="receiveDeleteCartItemEvent($event)"></app-cart-item>
     </div>
-    <div [ngClass]="{'cart-footer':true, 'center': !isExpanded, 'space-around': isExpanded}">
+    <div [class.cart-footer]="true" [class.center]="!isExpanded" [class.space-around]="isExpanded">
         <div class="total-sum">
             Totlal: {{ totalSum.toFixed(2) }}$
         </div>
-        <div [ngClass]="{'payment': isExpanded, 'hide': !isExpanded}">
+        <div [class.payment]="isExpanded" [class.hide]="!isExpanded">
             <button type="button" class="btn-buy-now" (click)="orderNow()">ORDER NOW</button>
         </div>
     </div>

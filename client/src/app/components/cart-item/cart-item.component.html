@@ -1,8 +1,8 @@
-<div [ngClass]="{'cart-item': isExpanded, 'm-cart-item': !isExpanded}">
-    <div [ngClass]="{'img': isExpanded, 'only-img': !isExpanded}">
+<div [class.cart-item]="isExpanded" [class.m-cart-item]="!isExpanded">
+    <div [class.img]="isExpanded" [class.only-img]="!isExpanded">
         <img class="img-item" src="http://localhost:5000/api/images/{{ cartItem.product_id.image }}">
     </div>
-    <div [ngClass]="{'item-details': isExpanded, 'hide': !isExpanded}">
+    <div [class.item-details]="isExpanded" [class.hide]="!isExpanded">
         <div class="item-name">
             {{ cartItem.product_id.name }}
         </div>
@@ -10,7 +10,7 @@
             Qty: {{ cartItem.quantity }}
         </div>
     </div>
-    <div [ngClass]="{'total-price-item': isExpanded, 'hide': !isExpanded}">
+    <div [class.total-price-item]="isExpanded" [class.hide]="!isExpanded">
         <div class="text">
             {{ cartItem.price }} $
         </div>
