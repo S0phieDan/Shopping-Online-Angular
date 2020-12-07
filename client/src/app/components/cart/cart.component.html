@@ -1,7 +1,7 @@
 <div class="cart-content">
     <div class="cart-header">
-        <i *ngIf="isExpanded" class="fa fa-angle-double-left cart-change" (click)="changeCartSize(true)"></i>
-        <i *ngIf="!isExpanded" class="fa fa-angle-double-right cart-change" (click)="changeCartSize(false)"></i>
+        <i class="fa cart-change" [class.fa-angle-double-left]="isExpanded" [class.fa-angle-double-right]="!isExpanded"
+            (click)="changeCartSize(isExpanded)"></i>
         <div class="cart-header-title">
             <h2 [class.hide]="!isExpanded">CART</h2>
             <i class="fa fa-shopping-cart fa-2x"></i>
