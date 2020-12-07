@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
   oldLength: number = 0;
   newLength: number;
   totalSum: number = 0;
-  @Output() changeCartSizeEvent: EventEmitter<Boolean> = new EventEmitter();
+  @Output() changeCartSizeEvent = new EventEmitter<Boolean>();
   isExpanded: boolean = true;
   @ViewChild('cartBody') private cartBody: ElementRef;
 

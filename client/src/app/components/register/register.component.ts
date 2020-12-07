@@ -9,7 +9,7 @@ import { RegisterServiceService } from '../../services/register-service.service'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @Output() isLoginEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() isLoginEvent = new EventEmitter<boolean>();
   @ViewChild(StepperComponent) stepper;
   isOpenPopup: boolean = false;
   isSuccess: boolean = false;

@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
   @Input() isAdminLogged: boolean;
   newProduct: ProductModel;
   updatedProduct: ProductModel;
-  @Output() isEditProductOpened: EventEmitter<boolean> = new EventEmitter();
+  @Output() isEditProductOpened = new EventEmitter<boolean>();
   pageEvent: PageEvent = new PageEvent();
   pageSize: number = 10;
   @ViewChild('paginator') paginator: MatPaginator;

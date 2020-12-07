@@ -26,7 +26,7 @@ export class UpdateProductFormComponent implements OnInit {
   categories: CategoryModel[] = [];
   isOpenList: boolean = false;
   @ViewChild('imageElem') private imageElem: ElementRef;
-  @Output() cancelEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() cancelEvent = new EventEmitter<boolean>();
   @Input() isHiddenBody: boolean;
   errorMessage: String = 'Input fields are invalid or empty!';
   successMessage: String = "Congratulations, the product was updated successfully!";

@@ -12,7 +12,7 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Output() isRegisterEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() isRegisterEvent = new EventEmitter<boolean>();
   email: String = "";
   isEmailValid: boolean = true;
   isPasswordValid: boolean = true;

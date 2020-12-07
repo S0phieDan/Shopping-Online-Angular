@@ -26,7 +26,7 @@ export class StepperComponent implements OnInit {
   isFirstNameValid: boolean = true;
   last_name: String;
   isLastNameValid: boolean = true;
-  @Output() createAccountEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() createAccountEvent = new EventEmitter<boolean>();
   israelCities: String[];
   searchCitiesArray: String[];
   errorMessage: String;

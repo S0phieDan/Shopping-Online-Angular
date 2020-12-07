@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
   @Input() isSuccess: boolean;
-  @Output() popupEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() popupEvent = new EventEmitter<boolean>();
   @Input() successMessage: String;
   @Input() errorMessage: String;
 

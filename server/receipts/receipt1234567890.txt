@@ -1,0 +1,12 @@
+RECEIPT OF USER 1234567890:
+
+Product Name: Frozen Yogurt, Qty: 1, Price: 5.9
+Product Name: Red Wine, Qty: 1, Price: 5.5
+Product Name: Coca-Cola, Qty: 1, Price: 2.5
+Product Name: Pepper, Qty: 1, Price: 4.56
+Product Name: Pumpkin, Qty: 1, Price: 10.23
+Product Name: Activia Drink Yogurt, Qty: 1, Price: 8.5
+Product Name: Heineken Beer, Qty: 1, Price: 5.5
+Product Name: Milka Bar, Qty: 1, Price: 8.5
+
+TOTAL PRICE: 51.19$

@@ -10,8 +10,8 @@ import { SharedServiceService } from '../../services/shared-service.service';
 export class ProductComponent implements OnInit {
   @Input() product: ProductModel;
   @Input() isAdminLogged: boolean;
-  @Output() chooseProductEvent: EventEmitter<any> = new EventEmitter();
-  @Output() updateProductEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() chooseProductEvent = new EventEmitter<any>();
+  @Output() updateProductEvent = new EventEmitter<boolean>();
   isPopup: boolean = false;
   quantity: number = 1;
 

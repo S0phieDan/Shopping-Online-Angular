@@ -10,7 +10,7 @@ export class CartItemComponent implements OnInit {
   @Input() cartItem: CartItemModel;
   @Input() isExpanded: boolean;
   @Input() isOrder: boolean;
-  @Output() deleteCartItemEvent: EventEmitter<CartItemModel> = new EventEmitter();
+  @Output() deleteCartItemEvent = new EventEmitter<CartItemModel>();
 
   constructor() { }
 
