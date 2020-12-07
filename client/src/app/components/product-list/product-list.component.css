@@ -1,4 +1,4 @@
-.list{
+.products{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,5 +7,22 @@
 
 .options{
     padding: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: mainFont;
+}
+
+.mat-paginator{
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    margin: 15px auto;
+    font-family: mainFont;
+    font-size: large;
+    font-weight: 600;
+    background-color: transparent;
+    color:#0d47a1;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }

@@ -104,12 +104,10 @@ export class ProductListComponent implements OnInit {
       if(data)
         this.sharedService.addCartItemToCart(data[0]);
     })
-    
+
   }
 
   handlePage(event:PageEvent){
-    console.log(event);
-    
     const {pageIndex, pageSize} = event;
     let startIndex = pageIndex * pageSize;
     let endIndex = startIndex + pageSize;

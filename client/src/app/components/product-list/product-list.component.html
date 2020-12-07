@@ -3,14 +3,15 @@
     <app-search (searchEvent)="receiveSearchEvent($event)"></app-search>
 </div>
 <div class="list">
-    <app-product 
+    <div class="products">
+        <app-product 
         *ngFor="let product of productsPerPage" 
         [product]="product"
         (chooseProductEvent)="receiveChooseProductEvent($event)"
         [isAdminLogged]="isAdminLogged"
-        (updateProductEvent)="receiveUpdateProductEvent($event)"
-    >
-    </app-product>
+        (updateProductEvent)="receiveUpdateProductEvent($event)">
+        </app-product>
+    </div>
     <mat-paginator 
         #paginator
         [length]="products.length"
