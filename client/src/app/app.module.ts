@@ -35,7 +35,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { OrderCompleteComponent } from './components/order-complete/order-complete.component';
-import {MatPaginatorModule} from '@angular/material/paginator'; 
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ToolbarComponent } from './components/toolbar/toolbar.component'; 
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CartOrderComponent,
     OrderDetailsComponent,
     CartItemOrderComponent,
-    OrderCompleteComponent
+    OrderCompleteComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
