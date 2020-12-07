@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
 import { CartItemModel } from 'src/app/model/cartItem.model';
 import { ProductModel } from '../../model/product.model';
 import { ProductListServiceService } from '../../services/product-list-service.service';
 import { SharedServiceService } from '../../services/shared-service.service';
 import { SocketioService } from '../../services/socketio.service';
 import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-product-list',
@@ -20,10 +22,9 @@ export class ProductListComponent implements OnInit {
   newProduct: ProductModel;
   updatedProduct: ProductModel;
   @Output() isEditProductOpened: EventEmitter<boolean> = new EventEmitter();
-  pageEvent: PageEvent;
-  pageSize:Number = 10;
-
-
+  pageEvent: PageEvent = new PageEvent();
+  pageSize:number = 10;
+  @ViewChild('paginator') paginator: MatPaginator;
   
   constructor(
     private productListServiceService:ProductListServiceService, private sharedService:SharedServiceService, private socketService: SocketioService) { }
@@ -82,9 +83,12 @@ export class ProductListComponent implements OnInit {
         this.products = data;
         this.productsPerPage = [];
 
-        for(let i=0; i<this.pageSize; i++){
-          this.productsPerPage.push(this.products[i]);
-        }
+       this.pageEvent.length = this.products.length;
+       this.pageEvent.pageIndex = 0;
+       this.pageEvent.pageSize = this.pageSize;
+       this.pageEvent.previousPageIndex = 1;
+       this.handlePage(this.pageEvent);
+       this.paginator.firstPage();
     });
   }
 
@@ -100,10 +104,12 @@ export class ProductListComponent implements OnInit {
       if(data)
         this.sharedService.addCartItemToCart(data[0]);
     })
-
+    
   }
 
   handlePage(event:PageEvent){
+    console.log(event);
+    
     const {pageIndex, pageSize} = event;
     let startIndex = pageIndex * pageSize;
     let endIndex = startIndex + pageSize;

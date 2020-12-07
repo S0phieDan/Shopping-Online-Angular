@@ -12,6 +12,7 @@
     >
     </app-product>
     <mat-paginator 
+        #paginator
         [length]="products.length"
         [pageSize]="pageSize"
         (page)="pageEvent = handlePage($event)">

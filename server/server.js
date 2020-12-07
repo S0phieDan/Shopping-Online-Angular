@@ -474,6 +474,10 @@ app.post('/login', (req, res) => {
             }
         })
     }
+    else
+    {
+        res.json({success: false})
+    }
 })
 
 app.get('/authorization', isAuth, (req, res) => {
