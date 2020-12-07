@@ -7,7 +7,9 @@
 
 .expended{
     flex: 0.25;
-    background-color: #82b74b;
+    background-color: #d9edfd;
+    box-shadow: 4px 0 6px -2px rgba(0,0,0,0.2);
+    z-index: 2;
 }
 
 
