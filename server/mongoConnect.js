@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Types;
 
-mongoose.connect('mongodb://localhost:27017/FreshStock', {
+mongoose.connect('mongodb+srv://root:Aa123456!@forever.uos9c.mongodb.net/FreshStock?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

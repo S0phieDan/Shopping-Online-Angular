@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http, { cors: true, origins: 'http://localhost:4200' });
+const io = require('socket.io')(http, { cors: true, origins: 'localhost:4200' });
 const cors = require('cors');
 const multer = require('multer');
 const bcrypt = require('bcrypt');
@@ -19,6 +19,7 @@ const { Cart } = require('./models/cart');
 const { CartItem } = require('./models/cartItem');
 const { User } = require('./models/user');
 const { Order } = require('./models/order');
+const { clear } = require('console');
 
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'upload'),
@@ -536,7 +537,7 @@ app.route('/order', isAuth)
     .post((req, res) => {
         const { user_id, totalPrice, city, street, shippingDate, paymentMethod } = req.body;
 
-        if (!checkId(user_id._id) || !checkPrice(totalPrice) || !checkString(city) || !checkString(street) || !checkString(paymentMethod) || !checkString(shippingDate))
+        if (!checkId(user_id._id)|| !checkPrice(totalPrice) || !checkString(city) || !checkString(street) || !checkString(paymentMethod) || !checkString(shippingDate))
             return res.json({ success: false });
 
         Cart.find({ user_id: user_id._id }, '_id').exec((err, doc) => {

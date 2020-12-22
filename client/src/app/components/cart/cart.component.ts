@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   cartItems: CartItemModel[] = [];
   cartItem: CartItemModel;
-  oldLength: number = 0;
+  oldLength = 0;
   newLength: number;
-  totalSum: number = 0;
+  totalSum = 0;
   @Output() changeCartSizeEvent = new EventEmitter<Boolean>();
   isExpanded: boolean = true;
   @ViewChild('cartBody') private cartBody: ElementRef;

@@ -1,4 +1,9 @@
 RECEIPT OF USER 445778953:
 
+Product Name: Gouda Cheese, Qty: 1, Price: 8.5
+Product Name: Milk, Qty: 1, Price: 8
+Product Name: Swiss Cheese, Qty: 1, Price: 10
+Product Name: Frozen Yogurt, Qty: 1, Price: 5.9
+Product Name: Milka Bar, Qty: 1, Price: 8.5
 
-TOTAL PRICE: 0.00$
+TOTAL PRICE: 40.90$

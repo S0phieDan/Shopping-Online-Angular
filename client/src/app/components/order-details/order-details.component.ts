@@ -155,20 +155,21 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   confirmOrder(): void {
-    if (this.city && this.street && this.shippingDate && this.paymentMethod && this.isStreetValid && this.isCityValid && this.isShippingDateValid) {
+    if (this.inputCity && this.inputStreet && this.shippingDate && this.paymentMethod && this.isStreetValid && this.isCityValid && this.isShippingDateValid) {
       const order: OrderModel = {
         user_id:
         {
           _id: this.user_id
         },
         totalPrice: this.totalPrice,
-        city: this.city,
-        street: this.street,
+        city: this.inputCity,
+        street: this.inputStreet,
         shippingDate: this.shippingDate,
         paymentMethod: this.paymentMethod
       }
-
+      
       this.orderDetailsService.createNewOrder(order).subscribe((data) => {
+        console.log(data);
         if (data) {
           this.confirmOrderEvent.emit({ data: data, isOrderComplete: true });
         }

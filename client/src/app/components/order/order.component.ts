@@ -1,5 +1,3 @@
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
