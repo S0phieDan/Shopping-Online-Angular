@@ -77,22 +77,34 @@ export class ProductListComponent implements OnInit {
   getProductListFromDB(): void {
     this.productListServiceService.getProductList(this.chosenCategory).subscribe((data: ProductModel[]) => {
       if (data)
+      {
+        console.log(data);
+        
         this.products = data;
-      this.productsPerPage = [];
-
-      this.pageEvent.length = this.products.length;
-      this.pageEvent.pageIndex = 0;
-      this.pageEvent.pageSize = this.pageSize;
-      this.pageEvent.previousPageIndex = 1;
-      this.handlePage(this.pageEvent);
-      this.paginator.firstPage();
+        this.productsPerPage = [];
+        this.pageEvent.length = this.products.length;
+        this.pageEvent.pageIndex = 0;
+        this.pageEvent.pageSize = this.pageSize;
+        this.pageEvent.previousPageIndex = 1;
+        this.handlePage(this.pageEvent);
+        this.paginator.firstPage();
+      }
     });
   }
 
   searchInDB(value: string): void {
     this.productListServiceService.searchProduct(value).subscribe((data: ProductModel[]) => {
       if (data)
+      {
         this.products = data;
+        this.productsPerPage = data;
+        this.pageEvent.length = this.products.length;
+        this.pageEvent.pageIndex = 0;
+        this.pageEvent.pageSize = this.pageSize;
+        this.pageEvent.previousPageIndex = 1;
+        this.handlePage(this.pageEvent);
+        this.paginator.firstPage();
+      }
     })
   }
 

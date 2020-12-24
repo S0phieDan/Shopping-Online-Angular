@@ -19,14 +19,14 @@ export class ProductListServiceService {
   constructor(private http: HttpClient) { }
 
   getProductList(categoryName: string): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>('http://localhost:5000/products/' + categoryName, httpOptions);
+    return this.http.get<ProductModel[]>('/api/products/' + categoryName, httpOptions);
   }
 
   searchProduct(productName: string): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>('http://localhost:5000/search/' + productName, httpOptions);
+    return this.http.get<ProductModel[]>('/api/search/' + productName, httpOptions);
   }
 
   addProduct(item: any): Observable<CartItemModel> {
-    return this.http.post<CartItemModel>('http://localhost:5000/cart', item, httpOptions);
+    return this.http.post<CartItemModel>('/api/cart', item, httpOptions);
   }
 }

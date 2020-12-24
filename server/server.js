@@ -19,7 +19,6 @@ const { Cart } = require('./models/cart');
 const { CartItem } = require('./models/cartItem');
 const { User } = require('./models/user');
 const { Order } = require('./models/order');
-const { clear } = require('console');
 
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'upload'),
@@ -80,7 +79,7 @@ app.get('/products/:category', isAuth, (req, res) => {
     Category.find({ category_name: category }).exec((err, doc) => {
         if (err) return res.json({ success: false });
 
-        if (doc) {
+        if (doc.length) {
             const id = doc[0]._id;
             Product.find({ category_id: id }).populate({
                 path: 'category_id',
