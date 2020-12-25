@@ -37,3 +37,31 @@
     font-family: mainFont;
     src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }
+
+@media only screen and (max-width:768px) {
+    /* For mobile tablets ipads: */
+    .ul-categories{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .li-category {
+        font-size: medium;
+        margin: 0px 5px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .ul-categories{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .li-category {
+        font-size: 15px;
+        margin: 0px 5px;
+        text-align: center;
+    }
+}

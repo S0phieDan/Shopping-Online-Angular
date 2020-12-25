@@ -3,21 +3,26 @@
     height: 93%;
     width: 100%;
     background-color:whitesmoke;
+    overflow: auto;
 }
 
-app-login{
+app-login, app-register, app-store-ad, app-store-data{
     flex: 1;
 }
 
-app-register{
-    flex: 1;
-}
+@media only screen and (max-width:768px) {
+    /* For mobile phones: */
+    .home {
+        display: flex;
+        flex-direction: column;
+        height: 93%;
+        width: 100%;
+        background-color:whitesmoke;
+    }
 
-app-store-ad{
-    flex: 1;
-}
-
-app-store-data{
-    flex: 1;
+    app-login, app-register, app-store-ad, app-store-data {
+        width: 100%;
+        height: 93vh;
+    }
 }
 

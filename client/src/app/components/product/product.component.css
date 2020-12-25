@@ -141,3 +141,17 @@
     font-family: mainFont;
     src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .product{
+        width: 12rem;
+        height: 12rem;
+        margin: 5px;
+    }
+
+    .img-product{
+        width: 8rem;
+        height: auto;
+    }
+}

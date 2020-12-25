@@ -91,3 +91,11 @@ p{
     font-family: mainFont;
     src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .advertation p{
+        font-size: medium;
+        font-weight: 600;
+    }
+}

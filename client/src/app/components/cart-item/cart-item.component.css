@@ -26,12 +26,14 @@
     width: 60px;
     height: auto;
     object-fit: contain;
+    align-self: center;
 }
 
 .img{
     border-right: 1.8px solid #dde3ee;
     margin-right: 5px;
     padding: 3px;
+    display: flex;
 }
 
 .only-img{
@@ -85,4 +87,22 @@
 
 .cart-item:hover .delete{
     display: inline-block;
+}
+
+@media only screen and (max-width:768px) {
+    /* For mobile phones: */
+    .item-name, .item-quantity, .text{
+        font-size: small;
+    }
+
+    .img-item{
+        width: 50px;
+        height: auto;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    .item-details{
+        margin-right: 10px;
+    }
 }

@@ -78,7 +78,7 @@ h2{
 
 .order-img{
     background-color: white;
-    background-image: url(../../../assets/images/hiclipart.com.png);
+    background-image: url('../../../assets/images/orders-img.jpg');
     background-position: center;
     background-size: cover;
     height: 120px;
@@ -90,7 +90,7 @@ h2{
 
 .products-img{
     background-color: white;
-    background-image: url(../../../assets/images/hiclipart1.com.png);
+    background-image: url('../../../assets/images/products-img.jpg');
     background-position: center;
     background-size: cover;
     height: 120px;
@@ -98,5 +98,16 @@ h2{
     border-radius: 50%;
     margin: 0 auto;
     box-shadow: 10px 10px 18px rgba(0,0,0,0.35);
+}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    .section {
+        width: 50%;
+    }
+
+    .section h2 {
+        font-size: medium;
+    }
 }
 
