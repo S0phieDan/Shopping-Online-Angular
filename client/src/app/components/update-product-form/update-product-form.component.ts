@@ -6,6 +6,7 @@ import { NewProductFormServiceService } from '../../services/new-product-form-se
 import { SocketioService } from '../../services/socketio.service';
 import { ProductModel } from 'src/app/model/product.model';
 import { ValidationServiceService } from '../../services/validation-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-update-product-form',
@@ -13,6 +14,7 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   styleUrls: ['./update-product-form.component.css']
 })
 export class UpdateProductFormComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   productName: String = "";
   isProductNameValid: boolean = true;
   price: number;
@@ -41,21 +43,29 @@ export class UpdateProductFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.categoryListService.getCategories().subscribe((data: CategoryModel[]) => {
-      if (data)
-        this.categories = data;
-    });
+    this.subscription.add(
+      this.categoryListService.getCategories().subscribe((data: CategoryModel[]) => {
+        if (data)
+          this.categories = data;
+      })
+    )
+    
+    this.subscription.add(
+      this.sharedService.currentProductToUpdate.subscribe(product => {
+        const { name, price, image, category_id } = product;
+        const { _id, category_name } = category_id;
+        this.productName = name;
+        this.price = price;
+        this.category = category_name;
+        this.categoryId = _id;
+        this.imagePath = image;
+        this._id = product._id;
+      })
+    )
+  }
 
-    this.sharedService.currentProductToUpdate.subscribe(product => {
-      const { name, price, image, category_id } = product;
-      const { _id, category_name } = category_id;
-      this.productName = name;
-      this.price = price;
-      this.category = category_name;
-      this.categoryId = _id;
-      this.imagePath = image;
-      this._id = product._id;
-    });
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   openCategoryList(): void {
@@ -69,11 +79,13 @@ export class UpdateProductFormComponent implements OnInit {
       const fd = new FormData();
       fd.append('image', files[0]);
 
-      this.newProductFormService.insertImage(fd).subscribe(data => {
-        if (data) {
-          this.setImagePath(data);
-        }
-      });
+      this.subscription.add(
+        this.newProductFormService.insertImage(fd).subscribe(data => {
+          if (data) {
+            this.setImagePath(data);
+          }
+        })
+      )
     }
   }
 

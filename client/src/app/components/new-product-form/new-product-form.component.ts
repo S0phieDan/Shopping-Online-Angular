@@ -5,6 +5,7 @@ import { NewProductFormServiceService } from '../../services/new-product-form-se
 import { ProductModel } from '../../model/product.model';
 import { SocketioService } from '../../services/socketio.service';
 import { ValidationServiceService } from '../../services/validation-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-new-product-form',
@@ -12,6 +13,7 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   styleUrls: ['./new-product-form.component.css']
 })
 export class NewProductFormComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   productName: String = "";
   isProductNameValid: boolean = true;
   price: number;
@@ -36,10 +38,16 @@ export class NewProductFormComponent implements OnInit {
     private validationService: ValidationServiceService) { }
 
   ngOnInit(): void {
-    this.categoryListService.getCategories().subscribe((data: CategoryModel[]) => {
-      if (data)
-        this.categories = data;
-    });
+    this.subscription.add(
+      this.categoryListService.getCategories().subscribe((data: CategoryModel[]) => {
+        if (data)
+          this.categories = data;
+      })
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   setProductName(value: string): void {
@@ -96,12 +104,13 @@ export class NewProductFormComponent implements OnInit {
       const fd = new FormData();
       fd.append('image', files[0]);
 
-      this.newProductFormService.insertImage(fd).subscribe(data => {
-        if (data) {
-          this.setImagePath(data);
-        }
-      });
-
+      this.subscription.add(
+        this.newProductFormService.insertImage(fd).subscribe(data => {
+          if (data) {
+            this.setImagePath(data);
+          }
+        })
+      )
     }
   }
 

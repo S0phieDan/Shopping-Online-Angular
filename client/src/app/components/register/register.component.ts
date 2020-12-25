@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 import { StepperComponent } from '../stepper/stepper.component';
 import { UserModel } from '../../model/user.model';
 import { RegisterServiceService } from '../../services/register-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +10,7 @@ import { RegisterServiceService } from '../../services/register-service.service'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   @Output() isLoginEvent = new EventEmitter<boolean>();
   @ViewChild(StepperComponent) stepper;
   isOpenPopup: boolean = false;
@@ -20,6 +22,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   login(): void {
@@ -38,16 +44,18 @@ export class RegisterComponent implements OnInit {
         last_name: this.stepper.last_name,
         isAdmin: false
       }
-      this.registerService.createNewAccount(user).subscribe((data: boolean) => {
-        if (data) {
-          this.isSuccess = true;
-          this.isOpenPopup = true;
-        }
-        else {
-          this.isSuccess = false;
-          this.isOpenPopup = true;
-        }
-      });
+      this.subscription.add(
+        this.registerService.createNewAccount(user).subscribe((data: boolean) => {
+          if (data) {
+            this.isSuccess = true;
+            this.isOpenPopup = true;
+          }
+          else {
+            this.isSuccess = false;
+            this.isOpenPopup = true;
+          }
+        })
+      )
     }
   }
 

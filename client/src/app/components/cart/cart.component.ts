@@ -3,6 +3,7 @@ import { CartItemModel } from '../../model/cartItem.model';
 import { CartServiceService } from '../../services/cart-service.service';
 import { SharedServiceService } from '../../services/shared-service.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.component.css', '../../shared_styles/shared.css']
 })
 export class CartComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   cartItems: CartItemModel[] = [];
   cartItem: CartItemModel;
   oldLength = 0;
@@ -22,22 +24,26 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartServiceService, private sharedService: SharedServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.cartService.getCartItems().subscribe((data: CartItemModel[]) => {
-      if (data) {
-        this.cartItems = data;
-        this.cartItems.forEach(cartItem => this.totalSum += cartItem.price);
-        this.oldLength = this.cartItems.length;
-      }
-    });
-
-    this.sharedService.currentCartItemToAdd.subscribe(cartItem => {
-      if (cartItem) {
-        this.cartItem = cartItem;
-        this.cartItems.push(this.cartItem);
-        this.totalSum += this.cartItem.price;
-        this.newLength = this.cartItems.length;
-      }
-    });
+    this.subscription.add(
+      this.cartService.getCartItems().subscribe((data: CartItemModel[]) => {
+        if (data) {
+          this.cartItems = data;
+          this.cartItems.forEach(cartItem => this.totalSum += cartItem.price);
+          this.oldLength = this.cartItems.length;
+        }
+      })
+    );
+  
+    this.subscription.add(
+      this.sharedService.currentCartItemToAdd.subscribe(cartItem => {
+        if (cartItem) {
+          this.cartItem = cartItem;
+          this.cartItems.push(this.cartItem);
+          this.totalSum += this.cartItem.price;
+          this.newLength = this.cartItems.length;
+        }
+      })
+    );
   }
 
   ngAfterViewChecked(): void {
@@ -49,6 +55,10 @@ export class CartComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   receiveDeleteCartItemEvent(cartItem: CartItemModel): void {
     if (cartItem) {
       this.cartItems = this.cartItems.filter(item => item._id !== cartItem._id);
@@ -58,18 +68,22 @@ export class CartComponent implements OnInit {
   }
 
   deleteCartItemFromDB(cartItem_id: string): void {
-    this.cartService.deleteCartItem(cartItem_id).subscribe((data: String) => {
-      if (data)
-        console.log(data);
-    })
+    this.subscription.add(
+      this.cartService.deleteCartItem(cartItem_id).subscribe((data: String) => {
+        if (data)
+          console.log(data);
+      })
+    )
   }
 
   deleteAllCartItems(): void {
-    this.cartService.clearCart().subscribe((data: String) => {
-      if (data)
-        this.cartItems = [];
-      this.totalSum = 0;
-    });
+    this.subscription.add(
+      this.cartService.clearCart().subscribe((data: String) => {
+        if (data)
+          this.cartItems = [];
+        this.totalSum = 0;
+      })
+    )
   }
 
   changeCartSize(value: boolean): void {

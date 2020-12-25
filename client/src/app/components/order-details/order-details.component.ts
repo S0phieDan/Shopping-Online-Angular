@@ -6,6 +6,7 @@ import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { OrderModel } from '../../model/order.model';
 import { Router } from '@angular/router';
 import { ValidationServiceService } from '../../services/validation-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-order-details',
@@ -14,6 +15,7 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   encapsulation: ViewEncapsulation.None
 })
 export class OrderDetailsComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   first_name: String = "";
   last_name: String = "";
   user_id: Number;
@@ -69,37 +71,47 @@ export class OrderDetailsComponent implements OnInit {
     private validationService: ValidationServiceService) { }
 
   ngOnInit(): void {
-    this.orderDetailsService.getUserData().subscribe((data: UserModel) => {
-      if (data)
-        this.first_name = data.first_name;
-      this.last_name = data.last_name;
-      this.user_id = data._id;
-      this.city = data.city;
-      this.street = data.street;
-
-    });
-
-    this.registerService.getIsraelCities().subscribe((cities) => {
-      if (cities) {
-        const records = cities.result.records;
-        this.israelCities = records.map(record => record.Name);
-        this.searchCitiesArray = this.israelCities;
-      }
-    });
-
-    this.orderDetailsService.getOrderDates().subscribe((list: string[]) => {
-      for (let i = 0; i < list.length - 1; i++) {
-        let count = 1;
-        for (let j = i + 1; j < list.length; j++) {
-          if (list[i] === list[j]) {
-            count++;
+    this.subscription.add(
+      this.orderDetailsService.getUserData().subscribe((data: UserModel) => {
+        if (data)
+          this.first_name = data.first_name;
+        this.last_name = data.last_name;
+        this.user_id = data._id;
+        this.city = data.city;
+        this.street = data.street;
+  
+      })
+    )
+    
+    this.subscription.add(
+      this.registerService.getIsraelCities().subscribe((cities) => {
+        if (cities) {
+          const records = cities.result.records;
+          this.israelCities = records.map(record => record.Name);
+          this.searchCitiesArray = this.israelCities;
+        }
+      })
+    )
+    
+    this.subscription.add(
+      this.orderDetailsService.getOrderDates().subscribe((list: string[]) => {
+        for (let i = 0; i < list.length - 1; i++) {
+          let count = 1;
+          for (let j = i + 1; j < list.length; j++) {
+            if (list[i] === list[j]) {
+              count++;
+            }
+          }
+          if (count > 3) {
+            this.orderDates.push(list[i]);
           }
         }
-        if (count > 3) {
-          this.orderDates.push(list[i]);
-        }
-      }
-    })
+      })
+    )
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   doubleClickCity(): void {
@@ -167,17 +179,18 @@ export class OrderDetailsComponent implements OnInit {
         shippingDate: this.shippingDate,
         paymentMethod: this.paymentMethod
       }
-      
-      this.orderDetailsService.createNewOrder(order).subscribe((data) => {
-        console.log(data);
-        if (data) {
-          this.confirmOrderEvent.emit({ data: data, isOrderComplete: true });
-        }
-        else {
-          this.errorMessage = 'There was a problem while creating your order.\nPlease try again.';
-        }
-      });
 
+      this.subscription.add(
+        this.orderDetailsService.createNewOrder(order).subscribe((data) => {
+          console.log(data);
+          if (data) {
+            this.confirmOrderEvent.emit({ data: data, isOrderComplete: true });
+          }
+          else {
+            this.errorMessage = 'There was a problem while creating your order.\nPlease try again.';
+          }
+        })
+      )
     }
     else {
       this.errorMessage = this.message;

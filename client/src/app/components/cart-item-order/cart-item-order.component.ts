@@ -11,7 +11,6 @@ export class CartItemOrderComponent implements OnInit {
   @Input() isExpanded: boolean;
   @Input() query: string;
 
-
   constructor() { }
 
   ngOnInit(): void {

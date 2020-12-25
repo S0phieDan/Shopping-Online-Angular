@@ -5,6 +5,7 @@ import { ResponseModel } from '../../model/response.model'
 import { SharedServiceService } from '../../services/shared-service.service';
 import { CartModel } from '../../model/cart.model';
 import { ValidationServiceService } from '../../services/validation-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   @Output() isRegisterEvent = new EventEmitter<boolean>();
   email: String = "";
   isEmailValid: boolean = true;
@@ -32,59 +34,67 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginServiceService, private router: Router, private sharedService: SharedServiceService, private validationService: ValidationServiceService) { }
 
   ngOnInit(): void {
-    this.loginService.checkAuthorization().subscribe((data: ResponseModel) => {
-      if (data.success) {
-        if (data.response.isAdmin) {
-          this.router.navigate(['/store-management']);
-        }
-        else {
-          this.isLogged = true;
+    this.subscription.add(
+      this.loginService.checkAuthorization().subscribe((data: ResponseModel) => {
+        if (data.success) {
+          if (data.response.isAdmin) {
+            this.router.navigate(['/store-management']);
+          }
+          else {
+            this.isLogged = true;
 
-          this.loginService.getCartDetails().subscribe((data: CartModel) => {
-            const { totalPrice, cartCreatedAt, emptyCart } = data;
-
-            if (cartCreatedAt) {
-              this.cartTotalPrice = totalPrice;
-              this.cartCreationDate = new Date(cartCreatedAt).toLocaleDateString('en-GB');
-              this.isNewCart = false;
-            }
-            else if (emptyCart) {
-              this.isNewCart = true;
-
-
-              this.loginService.getOrderDetails().subscribe((data: any) => {
-                if (data) {
-                  this.welcomeMessage = false;
-                  const { totalPrice, shippingDate, createdAt } = data;
-                  this.orderPrice = totalPrice;
-                  this.orderCreated = new Date(createdAt).toLocaleDateString('en-GB');
-                  this.shippingDate = shippingDate;
+            this.subscription.add(
+              this.loginService.getCartDetails().subscribe((data: CartModel) => {
+                const { totalPrice, cartCreatedAt, emptyCart } = data;
+  
+                if (cartCreatedAt) {
+                  this.cartTotalPrice = totalPrice;
+                  this.cartCreationDate = new Date(cartCreatedAt).toLocaleDateString('en-GB');
+                  this.isNewCart = false;
                 }
-                else {
-                  this.welcomeMessage = true;
+                else if (emptyCart) {
+                  this.isNewCart = true;
+  
+                  this.subscription.add(
+                    this.loginService.getOrderDetails().subscribe((data: any) => {
+                      if (data) {
+                        this.welcomeMessage = false;
+                        const { totalPrice, shippingDate, createdAt } = data;
+                        this.orderPrice = totalPrice;
+                        this.orderCreated = new Date(createdAt).toLocaleDateString('en-GB');
+                        this.shippingDate = shippingDate;
+                      }
+                      else {
+                        this.welcomeMessage = true;
+                      }
+                    })
+                  )
                 }
               })
-            }
-          })
-
-        }
-        this.sharedService.changeUserData(data);
-      }
-      else {
-        this.isLogged = false;
-        this.sharedService.changeUserData(
-          {
-            success: true,
-            response:
-            {
-              name: "Guest",
-              email: "",
-              isAdmin: false
-            }
+            )
           }
-        )
-      }
-    });
+          this.sharedService.changeUserData(data);
+        }
+        else {
+          this.isLogged = false;
+          this.sharedService.changeUserData(
+            {
+              success: true,
+              response:
+              {
+                name: "Guest",
+                email: "",
+                isAdmin: false
+              }
+            }
+          )
+        }
+      })
+    )
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   register(): void {
@@ -121,57 +131,64 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.checkValidation()) {
-      this.loginService.loginUser(this.email, this.password).subscribe((data: ResponseModel) => {
-        if (data) {
-          if (data.success) {
-            this.isLogged = true;
-            this.email = "";
-            this.password = "";
-            this.sharedService.changeUserData(data);
-
-            if (data.response.isAdmin) {
-              this.router.navigate(['/store-management']);
+      this.subscription.add(
+        this.loginService.loginUser(this.email, this.password).subscribe((data: ResponseModel) => {
+          if (data) {
+            if (data.success) {
+              this.isLogged = true;
+              this.email = "";
+              this.password = "";
+              this.sharedService.changeUserData(data);
+  
+              if (data.response.isAdmin) {
+                this.router.navigate(['/store-management']);
+              }
+              else {
+                this.subscription.add(
+                  this.loginService.createNewCart().subscribe((data: ResponseModel) => {
+                    if (data) {
+                      const { success } = data;
+                      if (success) {
+                        this.subscription.add(
+                          this.loginService.getCartDetails().subscribe((data: CartModel) => {
+                            const { totalPrice, cartCreatedAt, emptyCart } = data;
+                            if (cartCreatedAt) {
+                              this.cartTotalPrice = totalPrice;
+                              this.cartCreationDate = new Date(cartCreatedAt).toLocaleDateString('en-GB');
+                              this.isNewCart = false;
+                            }
+                            else if (emptyCart) {
+                              this.isNewCart = true;
+      
+                              this.subscription.add(
+                                this.loginService.getOrderDetails().subscribe((data: any) => {
+                                  if (data) {
+                                    this.welcomeMessage = false;
+                                    const { totalPrice, shippingDate, createdAt } = data;
+                                    this.orderPrice = totalPrice;
+                                    this.orderCreated = new Date(createdAt).toLocaleDateString('en-GB');
+                                    this.shippingDate = shippingDate;
+                                  }
+                                  else {
+                                    this.welcomeMessage = true;
+                                  }
+                                })
+                              )
+                            }
+                          })
+                        )
+                      }
+                    }
+                  })
+                )
+              }
             }
             else {
-              this.loginService.createNewCart().subscribe((data: ResponseModel) => {
-                if (data) {
-                  const { success } = data;
-                  if (success) {
-                    this.loginService.getCartDetails().subscribe((data: CartModel) => {
-                      const { totalPrice, cartCreatedAt, emptyCart } = data;
-                      if (cartCreatedAt) {
-                        this.cartTotalPrice = totalPrice;
-                        this.cartCreationDate = new Date(cartCreatedAt).toLocaleDateString('en-GB');
-                        this.isNewCart = false;
-                      }
-                      else if (emptyCart) {
-                        this.isNewCart = true;
-
-                        this.loginService.getOrderDetails().subscribe((data: any) => {
-                          if (data) {
-                            this.welcomeMessage = false;
-                            const { totalPrice, shippingDate, createdAt } = data;
-                            this.orderPrice = totalPrice;
-                            this.orderCreated = new Date(createdAt).toLocaleDateString('en-GB');
-                            this.shippingDate = shippingDate;
-                          }
-                          else {
-                            this.welcomeMessage = true;
-                          }
-                        })
-                      }
-                    })
-                  }
-                }
-              })
+              this.errorMessage = this.message;
             }
           }
-          else {
-            this.errorMessage = this.message;
-          }
-
-        }
-      })
+        })
+      )
     }
   }
 

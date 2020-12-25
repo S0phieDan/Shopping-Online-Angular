@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { RegisterServiceService } from '../../services/register-service.service';
 import { ValidationServiceService } from '../../services/validation-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-stepper',
@@ -8,6 +9,7 @@ import { ValidationServiceService } from '../../services/validation-service.serv
   styleUrls: ['./stepper.component.css']
 })
 export class StepperComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
   id: Number;
   isIdValid: boolean = true;
   email: String;
@@ -35,13 +37,19 @@ export class StepperComponent implements OnInit {
   constructor(private registerService: RegisterServiceService, private validationService: ValidationServiceService) { }
 
   ngOnInit(): void {
-    this.registerService.getIsraelCities().subscribe((cities) => {
-      if (cities) {
-        const records = cities.result.records;
-        this.israelCities = records.map(record => record.Name);
-        this.searchCitiesArray = this.israelCities;
-      }
-    });
+    this.subscription.add(
+      this.registerService.getIsraelCities().subscribe((cities) => {
+        if (cities) {
+          const records = cities.result.records;
+          this.israelCities = records.map(record => record.Name);
+          this.searchCitiesArray = this.israelCities;
+        }
+      })
+    )
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   continueToNextStep(): void {
