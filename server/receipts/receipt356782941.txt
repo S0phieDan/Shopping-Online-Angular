@@ -1,9 +1,7 @@
 RECEIPT OF USER 356782941:
 
-Product Name: Greek Yogurt, Qty: 1, Price: 4.99
-Product Name: Pinaple, Qty: 1, Price: 8.5
-Product Name: Banana, Qty: 1, Price: 2.5
-Product Name: Japanese Cuisine Sushi, Qty: 1, Price: 35
-Product Name: Chicken burger, Qty: 1, Price: 6.5
+Product Name: Milk, Qty: 1, Price: 8
+Product Name: Swiss Cheese, Qty: 1, Price: 10
+Product Name: Milk Flavor, Qty: 1, Price: 2.5
 
-TOTAL PRICE: 70.48$Product Name: Corona, Qty: 1, Price: 12.99
+TOTAL PRICE: 20.50$

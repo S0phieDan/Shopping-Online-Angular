@@ -26,14 +26,14 @@
     width: 60px;
     height: auto;
     object-fit: contain;
-    align-self: center;
 }
 
 .img{
     border-right: 1.8px solid #dde3ee;
     margin-right: 5px;
-    padding: 3px;
+    padding: 5px;
     display: flex;
+    align-content: center;
 }
 
 .only-img{
@@ -89,20 +89,30 @@
     display: inline-block;
 }
 
-@media only screen and (max-width:768px) {
-    /* For mobile phones: */
-    .item-name, .item-quantity, .text{
-        font-size: small;
-    }
-
-    .img-item{
-        width: 50px;
-        height: auto;
-        object-fit: contain;
-        align-self: center;
+/*For tablets*/
+@media only screen and (min-width:1024px) and (max-width:1280px) {
+    .item-name, .text{
+        font-size: medium;
     }
 
     .item-details{
         margin-right: 10px;
+    }
+}
+
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
+    .item-name, .text{
+        font-size: small;
+    }
+
+    .item-details{
+        margin-right: 3px;
+    }
+
+    .img-item{
+        width: 45px;
+        height: auto;
+        object-fit: contain;
     }
 }

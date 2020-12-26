@@ -1,0 +1,8 @@
+RECEIPT OF USER 675678896:
+
+Product Name: Milk, Qty: 1, Price: 8
+Product Name: Frozen Yogurt, Qty: 1, Price: 5.9
+Product Name: Greek Yogurt, Qty: 1, Price: 4.99
+Product Name: Swiss Cheese, Qty: 1, Price: 10
+
+TOTAL PRICE: 31.39$Product Name: Milk Flavor, Qty: 1, Price: 2.5

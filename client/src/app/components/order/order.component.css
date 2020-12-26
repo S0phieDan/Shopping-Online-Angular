@@ -30,3 +30,12 @@ app-order-complete{
     width: 100%;
 }
 
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
+    .pre-order{
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+}
+

@@ -10,14 +10,26 @@ app-login, app-register, app-store-ad, app-store-data{
     flex: 1;
 }
 
-@media only screen and (max-width:768px) {
-    /* For mobile phones: */
+/*For iPads and Tablets*/
+@media only screen and (min-width:768px) and (max-width:1023px) {
     .home {
         display: flex;
         flex-direction: column;
         height: 93%;
         width: 100%;
         background-color:whitesmoke;
+    }
+
+    app-login, app-register, app-store-ad, app-store-data {
+        width: 100%;
+        height: 93vh;
+    }
+}
+
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
+    .home {
+        flex-direction: column;
     }
 
     app-login, app-register, app-store-ad, app-store-data {

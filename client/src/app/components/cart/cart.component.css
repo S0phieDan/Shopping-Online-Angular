@@ -127,21 +127,111 @@
     src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }
 
-@media only screen and (max-width:768px) {
-    /* For mobile phones: */
-    .cart-header-title h2, .num-of-items{
+/*For Laptops*/
+@media only screen and (min-width:1024px) and (max-width:1280px){
+    .btn-clear-cart{
+        padding: 5px 10px;
+        margin: 0;
+    }
+
+    .btn-buy-now{
+        font-size: medium; 
+        padding: 3px;
+    }
+
+    .cart-details{
+        width: 100%;
+        justify-content: space-around;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .total-sum{
+        text-align: center;
         font-size: medium;
     }
 
-    .btn-clear-cart, .btn-buy-now{
-        font-size: small;
-        padding: 2px 3px;
+    .cart-footer{
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+/*For iPads and Tablets*/
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    .btn-clear-cart{
+        padding: 5px;
+        margin: 0;
     }
 
-    .total-sum {
+    .btn-buy-now{
         font-size: medium;
+        padding: 2px;
+    }
+
+    .cart-details{
+        width: 100%;
+        justify-content: space-around;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .total-sum{
+        text-align: center;
+        font-size: medium;
+    }
+
+    .cart-footer{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .span-total{
+        display: none;
+    }
+
+}
+
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
+    .btn-clear-cart{
+        padding: 1px;
+        margin: 0;
+        margin-left: 3px;
+        font-size: medium;
+    }
+
+    .btn-buy-now{
+        font-size: medium;
+        padding: 2px;
+    }
+
+    .cart-details{
+        width: 100%;
+        justify-content: space-around;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .total-sum{
+        text-align: center;
+        font-size: medium;
+    }
+
+    .cart-footer{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .span-total{
+        display: none;
+    }
+
+    .num-of-items {
         text-align: center;
     }
 }
+
+
 
 

@@ -130,3 +130,10 @@
     font-family: mainFont;
     src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }
+
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
+    .order-data{
+        max-width: 20rem;
+    }
+}

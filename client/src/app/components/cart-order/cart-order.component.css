@@ -73,5 +73,26 @@
     color: #ff4d4d;
 }
 
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
+    .total-sum h4{
+        font-size: large;
+    }
+
+    .name, .back{
+        font-size: medium;
+    }
+
+    .cart-header{
+        padding:10px 5px;
+    }
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        height: 93vh;
+    }
+}
+
 
 

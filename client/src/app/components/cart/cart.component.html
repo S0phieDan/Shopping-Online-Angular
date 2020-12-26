@@ -20,7 +20,7 @@
     </div>
     <div [class.cart-footer]="true" [class.center]="!isExpanded" [class.space-around]="isExpanded">
         <div class="total-sum">
-            Totlal: {{ totalSum.toFixed(2) }}$
+            <span class="span-total">Totlal: </span>{{ totalSum.toFixed(2) }}$
         </div>
         <div [class.payment]="isExpanded" [class.hide]="!isExpanded">
             <button type="button" class="btn-buy-now" (click)="orderNow()">ORDER NOW</button>

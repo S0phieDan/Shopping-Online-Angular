@@ -27,7 +27,7 @@
                 </label>
                 <div class="small">Double-click to fill your default information</div>
                 <div class="flex">
-                    <div [ngClass]="{'select': true, 'danger': !isCityValid}">
+                    <div [ngClass]="{'select': true, 'wide':true, 'danger': !isCityValid}">
                         <div class="input-wrapper">
                             <input type="text" class="field" placeholder="City*" [value]="inputCity"
                                 (dblclick)="doubleClickCity()" (keyup)="setSearchCityName($event.target.value)">

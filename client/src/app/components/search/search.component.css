@@ -47,8 +47,24 @@
     src: url(../../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
 }
 
-@media only screen and (max-width:620px) {
-    /* For mobile phones: */
+/*For Laptops*/
+@media only screen and (min-width:1024px) and (max-width:1280px) {
+    .search-product{
+        width: 70%;
+        margin: 0 5px;
+    }
+}
+
+/*For iPads and Tablets*/
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    .search-product{
+        width: 90%;
+        margin: 0 5px;
+    }
+}
+
+/*For Mobile-L*/
+@media only screen and (min-width:425px) and (max-width:767px) {
     .search-product{
         width: 100%;
         margin: 0 5px;
