@@ -143,7 +143,6 @@
 }
 
 @media only screen and (max-width:620px) {
-    /* For mobile phones: */
     .product{
         width: 12rem;
         height: 12rem;
@@ -152,6 +151,21 @@
 
     .img-product{
         width: 8rem;
+        height: auto;
+    }
+}
+
+/*For Mobile-M/S*/
+@media only screen and (min-width:320px) and (max-width:424px) {
+    .product{
+        width: 10rem;
+        height: 10rem;
+        margin: 5px;
+        font-size: medium;
+    }
+
+    .img-product{
+        width: 5rem;
         height: auto;
     }
 }

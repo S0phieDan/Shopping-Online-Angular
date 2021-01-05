@@ -49,7 +49,6 @@
 }
 
 @media only screen and (max-width:620px) {
-    /* For mobile phones: */
     .connected-user, .user-email {
         font-size: medium;
     }
@@ -57,5 +56,21 @@
     .logo{
         margin-right: 15px;
         font-size: 1.5em;
+    }
+}
+
+/*For Mobile-M/S*/
+@media only screen and (min-width:320px) and (max-width:374px) {
+    .connected-user, .user-email {
+        font-size: small;
+    }
+
+    .fa-sign-out{
+        font-size: 1.5em;
+    }
+
+    .logo{
+        margin-right: 15px;
+        font-size: 1.2em;
     }
 }

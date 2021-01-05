@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http, { cors: true, origins: 'localhost:4200' });
+const io = require('socket.io')(http, { cors: true, origins: '18.193.119.10:80' });
 const cors = require('cors');
 const multer = require('multer');
 const bcrypt = require('bcrypt');
@@ -47,7 +47,7 @@ const isAuth = (req, res, next) => {
 
 app.use(appSession);
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: 'http://ec2-18-193-119-10.eu-central-1.compute.amazonaws.com',
     credentials: true
 }));
 app.use('/api/images', express.static('./upload'));
@@ -586,6 +586,7 @@ app.get('/order/details', isAuth, (req, res) => {
 
 app.get('/download-receipt', isAuth, (req, res) => {
     const { email } = req.session.user;
+    console.log(email);
 
     User.find({ email: email }, '_id').exec((err, doc) => {
         if (err) return res.json({ success: false });

@@ -132,8 +132,15 @@
 }
 
 /*For Mobile-L*/
-@media only screen and (min-width:425px) and (max-width:767px) {
+@media only screen and (min-width:375px) and (max-width:767px) {
     .order-data{
         max-width: 20rem;
+    }
+}
+
+/*For Mobile-M/S*/
+@media only screen and (min-width:320px) and (max-width:374px) {
+    .order-data{
+        max-width: 19rem;
     }
 }

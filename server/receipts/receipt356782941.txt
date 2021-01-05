@@ -2,6 +2,5 @@ RECEIPT OF USER 356782941:
 
 Product Name: Milk, Qty: 1, Price: 8
 Product Name: Swiss Cheese, Qty: 1, Price: 10
-Product Name: Milk Flavor, Qty: 1, Price: 2.5
 
-TOTAL PRICE: 20.50$
+TOTAL PRICE: 18.00$

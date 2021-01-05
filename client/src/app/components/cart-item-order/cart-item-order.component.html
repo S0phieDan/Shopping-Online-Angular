@@ -1,6 +1,6 @@
 <div [class.cart-item]="isExpanded" [class.m-cart-item]="!isExpanded">
     <div [ngClass]="{'img': isExpanded, 'only-img': !isExpanded}">
-        <img class="img-item" src="http://localhost:5000/api/images/{{ cartItem.product_id.image }}">
+        <img class="img-item" src="/api/api/images/{{ cartItem.product_id.image }}">
     </div>
     <div [class.item-details]="isExpanded" [class.hide]="!isExpanded">
         <div class="item-name" [innerHTML]="highlight()">

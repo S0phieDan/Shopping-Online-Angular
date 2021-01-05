@@ -26,8 +26,8 @@ app-login, app-register, app-store-ad, app-store-data{
     }
 }
 
-/*For Mobile-L*/
-@media only screen and (min-width:425px) and (max-width:767px) {
+/*For Mobile*/
+@media only screen and (min-width:320px) and (max-width:767px) {
     .home {
         flex-direction: column;
     }

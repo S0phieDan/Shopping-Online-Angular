@@ -14,7 +14,7 @@ export class SocketioService {
   constructor() { }
 
   setupSocketConnection(): void {
-    this.socket = io('localhost:5000');
+    this.socket = io('18.193.119.10:5000');
   }
 
   emitData(data: ProductModel): void {

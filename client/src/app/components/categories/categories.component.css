@@ -71,3 +71,16 @@
         margin: 3px;
     }
 }
+
+/*For Mobile-M/S*/
+@media only screen and (min-width:320px) and (max-width:424px) {
+    .ul-categories{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .li-category{
+        font-size: small;
+        margin: 2px;
+    }
+}

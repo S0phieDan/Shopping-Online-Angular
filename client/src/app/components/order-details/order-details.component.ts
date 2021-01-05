@@ -182,7 +182,6 @@ export class OrderDetailsComponent implements OnInit {
 
       this.subscription.add(
         this.orderDetailsService.createNewOrder(order).subscribe((data) => {
-          console.log(data);
           if (data) {
             this.confirmOrderEvent.emit({ data: data, isOrderComplete: true });
           }

@@ -232,6 +232,55 @@
     }
 }
 
+/*For Mobile-M/S*/
+@media only screen and (min-width:320px) and (max-width:424px) {
+    .cart-header-title h2{
+        font-size: medium;
+    }
+
+    .fa-shopping-cart{
+        font-size: large;
+    }
+
+    .btn-clear-cart{
+        padding: 1px;
+        margin: 0;
+        margin-left: 3px;
+        font-size: small;
+    }
+
+    .btn-buy-now{
+        font-size: small;
+        padding: 0px;
+        margin-left: 2px;
+    }
+
+    .cart-details{
+        width: 100%;
+        justify-content: space-around;
+        font-size: small;
+        font-weight: 600;
+    }
+
+    .total-sum{
+        text-align: center;
+        font-size: small;
+    }
+
+    .cart-footer{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .span-total{
+        display: none;
+    }
+
+    .num-of-items {
+        text-align: center;
+    }
+}
+
 
 
 

@@ -116,3 +116,15 @@ h2{
     }
 }
 
+/*For Mobile-M/S*/
+@media only screen and (min-width:320px) and (max-width:424px) {
+    .section {
+        width: 35%;
+        height: auto;
+    }
+
+    .section h2{
+        font-size: medium;
+    }
+}
+
